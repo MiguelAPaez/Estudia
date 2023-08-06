@@ -7,7 +7,7 @@
     <string name="example_email">example@email.com</string>
     <string name="password">Contraseña</string>
     <string name="example_password">•••••••••••</string>
-    <string name="login">Ingresar</string>
+    <string name="login">INGRESAR</string>
     <string name="forget_pass">¿Olvidaste tu contraseña?</string>
     <string name="signup"><u>Registrarse</u></string>
 

@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/mustard_500"
-    tools:context=".Login">
+    tools:context=".Login"
+    style="@style/ConstraintLayoutBase">
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        style="@style/LinearLayoutBase">
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/WightHeightBase">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="45dp"
-                android:layout_marginEnd="45dp">
+                style="@style/LinearLayoutAlignItems">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/logoLogin"
                     android:layout_width="220dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="80dp"
@@ -38,109 +30,69 @@
 
                 <TextView
                     android:id="@+id/textLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
                     android:text="@string/title_login"
-                    android:fontFamily="@font/quicsand_bold"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewStart"/>
+                    style="@style/TitleTextView"/>
 
                 <TextView
                     android:id="@+id/textMessageLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:text="@string/message_login"
-                    android:fontFamily=""
-                    android:textSize="20dp"
-                    android:textStyle="normal"
-                    android:textAlignment="viewStart"/>
+                    style="@style/TitleMediumTextView"/>
 
                 <TextView
                     android:id="@+id/textEmailLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
                     android:text="@string/email"
-                    android:fontFamily=""
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewStart"/>
+                    style="@style/SubtitleBoldTextView"/>
 
                 <LinearLayout
                     android:id="@+id/linearLayoutEmailLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="2dp"
-                    android:textAlignment="center"
-                    android:orientation="horizontal">
+                    style="@style/LinearLayoutTextEdit">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:boxStrokeColor="#ffffff"
+                        app:boxStrokeColor="@color/white_500"
                         app:boxStrokeWidth="1dp"
-                        app:boxStrokeWidthFocused="1dp">
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/emailLogin"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:hint="@string/example_email"
-                            android:inputType="textEmailAddress" />
+                            android:inputType="textEmailAddress"
+                            style="@style/TextInputEditStyle"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/textPasswordLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
                     android:text="@string/password"
-                    android:fontFamily=""
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:textAlignment="viewStart"/>
+                    style="@style/SubtitleBoldTextView"/>
 
                 <LinearLayout
                     android:id="@+id/linearLayoutPasswordLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="2dp"
-                    android:textAlignment="center"
-                    android:orientation="horizontal">
+                    style="@style/LinearLayoutTextEdit">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:boxStrokeColor="#ffffff"
+                        android:layout_height="wrap_content"
+                        app:boxStrokeColor="@color/white_500"
                         app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
                         app:boxStrokeWidthFocused="1dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/passLogin"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:hint="@string/example_password"
-                            android:inputType="textPassword" />
+                            android:inputType="textPassword"
+                            style="@style/TextInputEditStyle"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/btn_bg_selector"
                     android:text="@string/login"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white_300"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
+                    style="@style/PrincipalButtonStyle"/>
 
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
