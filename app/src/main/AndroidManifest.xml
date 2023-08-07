@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Estudia"
         tools:targetApi="31">
         <activity
+            android:name=".CustomRegister"
+            android:exported="false" />
+        <activity
             android:name=".BaseTemplate"
             android:exported="false" />
         <activity

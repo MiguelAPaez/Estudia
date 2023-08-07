@@ -10,6 +10,7 @@
         style="@style/LinearLayoutBase">
 
         <ScrollView
+            android:id="@+id/scrollViewRegister"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -18,6 +19,225 @@
 
             <LinearLayout
                 style="@style/LinearLayoutAlignItems">
+
+                <TextView
+                    android:id="@+id/textRegister"
+                    android:text="@string/title_register"
+                    style="@style/TitleTextView"/>
+
+                <TextView
+                    android:id="@+id/textNameRegister"
+                    android:text="@string/names_label"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutNameRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        app:boxStrokeColor="@color/white_500"
+                        app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameRegister"
+                            android:hint="@string/name_placeholder"
+                            android:inputType="textCapWords"
+                            style="@style/TextInputEditStyle"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textLastNameRegister"
+                    android:text="@string/last_name_label"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutLastNameRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        app:boxStrokeColor="@color/white_500"
+                        app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lastNameRegister"
+                            android:hint="@string/last_name_placeholder"
+                            android:inputType="textCapWords"
+                            style="@style/TextInputEditStyle"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textEmailRegister"
+                    android:text="@string/email"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEmailRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        app:boxStrokeColor="@color/white_500"
+                        app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailRegister"
+                            android:hint="@string/email_placeholder"
+                            android:inputType="textEmailAddress"
+                            style="@style/TextInputEditStyle"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textPasswordRegister"
+                    android:text="@string/password"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPasswordRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        app:boxStrokeColor="@color/white_500"
+                        app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordRegister"
+                            android:hint="@string/password_placeholder"
+                            android:inputType="textPassword"
+                            style="@style/TextInputEditStyle"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textPasswordConfirmRegister"
+                    android:text="@string/password_confirm"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPasswordConfirmRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        app:boxStrokeColor="@color/white_500"
+                        app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/passwordConfirmRegister"
+                            android:hint="@string/password_confirm_placeholder"
+                            android:inputType="textPassword"
+                            style="@style/TextInputEditStyle"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textPhoneRegister"
+                    android:text="@string/phone_label"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPhoneRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        app:boxStrokeColor="@color/white_500"
+                        app:boxStrokeWidth="1dp"
+                        app:placeholderTextColor="@color/grey_coal_300"
+                        app:boxStrokeWidthFocused="1dp"
+                        style="@style/WightHeightWrap">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phoneRegister"
+                            android:hint="@string/phone_placeholder"
+                            android:inputType="phone"
+                            style="@style/TextInputEditStyle"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textBirthDateRegister"
+                    android:text="@string/date_birth_label"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutBirthDateRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <Button
+                        android:id="@+id/birthDateRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/date_birth_placeholder"
+                        android:textSize="16sp"
+                        android:textColor="@color/grey_coal_400"
+                        style="?android:spinnerStyle"
+                        android:onClick="openDatePicker" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textSocialStratumRegister"
+                    android:text="@string/social_stratum_label"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutSocialStratumRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <Spinner
+                        android:id="@+id/socialStratumRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/grey_coal_400"
+                        android:entries="@array/stratum" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textGenderRegister"
+                    android:text="@string/gender_label"
+                    android:layout_marginTop="20dp"
+                    style="@style/SubtitleBoldTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutGenderRegister"
+                    style="@style/LinearLayoutTextEdit">
+
+                    <Spinner
+                        android:id="@+id/genderRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/grey_coal_400"
+                        android:backgroundTint="@color/grey_coal_400"
+                        android:entries="@array/gender" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/registerNextButton"
+                    android:text="@string/signup_label_button"
+                    android:layout_marginBottom="50dp"
+                    style="@style/PrincipalButtonStyle"/>
 
             </LinearLayout>
         </ScrollView>

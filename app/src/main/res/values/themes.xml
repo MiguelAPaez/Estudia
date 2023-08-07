@@ -5,6 +5,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBarOverlay">false</item>
+        <item name="android:spinnerItemStyle">@style/mySpinnerItemStyle</item>
         <item name="colorPrimary">@color/mustard_500</item>
         <item name="android:textColorPrimary">@color/white_400</item>
     </style>
@@ -35,6 +36,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="LinearLayoutHorizontalBase">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 
     <style name="LinearLayoutAlignItems">
@@ -88,6 +95,21 @@
         <item name="android:textAlignment">viewStart</item>
     </style>
 
+    <style name="SubtitleGreyTextView">
+        <item name="android:fontFamily">@font/asap_semibold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/grey_500</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="SubtitleTangerineTextView">
+        <item name="android:fontFamily">@font/asap_semibold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/tangerine_300</item>
+    </style>
+
 <!--    Buttons Style-->
 
     <style name="PrincipalButtonStyle">
@@ -97,6 +119,8 @@
         <item name="android:background">@color/grey_coal_300</item>
         <item name="android:textColor">@color/white_300</item>
         <item name="android:textSize">15dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">10dp</item>
         <item name="android:layout_gravity">center</item>
     </style>
 
@@ -105,6 +129,12 @@
     <style name="TextInputEditStyle" parent="@style/WightHeightWrap">
         <item name="android:textColor">@color/grey_coal_200</item>
         <item name="android:textColorHint">@color/grey_coal_200</item>
+    </style>
+
+    <!--    Spinner Style-->
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/grey_coal_200</item>
     </style>
 
 <!--    Hint Appearance Styles-->

@@ -1,14 +1,38 @@
 <resources>
     <string name="app_name">Estudia</string>
 
+    <!--    Login Screen-->
+
     <string name="title_login">Ingreso</string>
     <string name="message_login">Bievenid@ a Estudia</string>
     <string name="email">Email</string>
     <string name="example_email">example@email.com</string>
     <string name="password">Contraseña</string>
     <string name="example_password">•••••••••••</string>
-    <string name="login">INGRESAR</string>
-    <string name="forget_pass">¿Olvidaste tu contraseña?</string>
-    <string name="signup"><u>Registrarse</u></string>
+    <string name="login">ingresar</string>
+    <string name="no_account_message">¿No tienes una cuenta aún?</string>
+    <string name="signup"><u>Regístrate</u></string>
+    <string name="rights">All rigths reserved - Estudia 2023</string>
+
+    <!--    Register Screen-->
+
+    <string name="title_register">Registro</string>
+    <string name="names_label">Nombres</string>
+    <string name="name_placeholder">Ingresa tus nombres</string>
+    <string name="last_name_label">Apellidos</string>
+    <string name="last_name_placeholder">Ingresa tus apellidos</string>
+    <string name="email_placeholder">Ingresa tu correo electrónico</string>
+    <string name="password_placeholder">Ingresa tu contraseña</string>
+    <string name="password_confirm">Confirma tu contraseña</string>
+    <string name="password_confirm_placeholder">Escribe nuevamente tu contraseña</string>
+    <string name="phone_label">Celular</string>
+    <string name="phone_placeholder">Escribe tu número de celular</string>
+    <string name="date_birth_label">Fecha de nacimiento</string>
+    <string name="date_birth_placeholder">Selecciona tu fecha de nacimiento</string>
+    <string name="social_stratum_label">Estrato</string>
+    <string name="social_stratum_placeholder">Selecciona tu estrato</string>
+    <string name="gender_label">Género</string>
+    <string name="gender_placeholder">Selecciona tu género</string>
+    <string name="signup_label_button">Regístrate</string>
 
 </resources>
