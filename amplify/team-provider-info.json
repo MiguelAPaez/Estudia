@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-estudia-dev-121137-authRole",
+      "UnauthRoleArn": "arn:aws:iam::949312574580:role/amplify-estudia-dev-121137-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::949312574580:role/amplify-estudia-dev-121137-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-estudia-dev-121137-deployment",
+      "UnauthRoleName": "amplify-estudia-dev-121137-unauthRole",
+      "StackName": "amplify-estudia-dev-121137",
+      "StackId": "arn:aws:cloudformation:us-east-1:949312574580:stack/amplify-estudia-dev-121137/4e32a000-3933-11ee-81c2-0a6642297b5b",
+      "AmplifyAppId": "d1d56l8pzaxahw"
+    },
+    "categories": {
+      "auth": {
+        "estudiaa7ac3dbe": {}
+      }
+    }
+  }
+}

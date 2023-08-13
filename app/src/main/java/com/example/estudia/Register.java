@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -40,13 +38,16 @@ public class Register extends AppCompatActivity {
     boolean validacionOK;
     private DatePickerDialog datePickerDialog;
 
+    //Register Service
+    AmplifyCognito amplifyCognito;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         //ScrollView Register
-        scrollView = (ScrollView) findViewById ( R.id.scrollViewRegister );
+        scrollView = (ScrollView) findViewById(R.id.scrollViewRegister);
 
         //LinearLayout de Register
         nameL = (LinearLayout) findViewById ( R.id.linearLayoutNameRegister );
@@ -66,20 +67,22 @@ public class Register extends AppCompatActivity {
         ePassword = (EditText) findViewById ( R.id.passwordRegister );
         ePasswordConfirm = (EditText) findViewById ( R.id.passwordConfirmRegister );
         ePhone = (EditText) findViewById ( R.id.phoneRegister );
-        spinStratum = (Spinner) findViewById ( R.id.socialStratumRegister );
-        spinGender = (Spinner) findViewById ( R.id.genderRegister );
+        spinStratum = (Spinner) findViewById(R.id.socialStratumRegister);
+        spinGender = (Spinner) findViewById(R.id.genderRegister);
 
         //Buttons
-        btnDate = (Button) findViewById ( R.id.birthDateRegister );
+        btnDate = (Button) findViewById(R.id.birthDateRegister);
         btnNext = (Button) findViewById(R.id.registerNextButton);
 
         //Validaciones
         validations = new ValidationsService();
 
+        amplifyCognito = new AmplifyCognito(getApplicationContext());
+
         initDatePicker();
 
         //Validar datos
-        btnNext.setOnClickListener(new View.OnClickListener () {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ThreadB b = new ThreadB();
@@ -98,10 +101,7 @@ public class Register extends AppCompatActivity {
                         fillData ();
                         Profile profile = createProfile();;
                         BasicProfile basicProfile = createBasicProfile();
-                        Intent intent = new Intent ( v.getContext () , CustomRegister.class );
-                        intent.putExtra ( "profile" , profile);
-                        intent.putExtra ( "basicProfile" , basicProfile);
-                        startActivity ( intent );
+                        amplifyCognito.signUp(profile, basicProfile);
                     }
                 }
             }
@@ -402,18 +402,18 @@ public class Register extends AppCompatActivity {
 
         //Validación Estrato
         String stratum = spinStratum.getSelectedItem().toString().trim();
-        if(validations.isEquals ( stratum, "Selecciona tu estrato<" )){
+        if (validations.isEquals(stratum, "Selecciona tu estrato")) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText ( getApplicationContext () , "Ingrese su Estrato" , Toast.LENGTH_SHORT ).show ();
-                    scrollView.post ( new Runnable () {
+                    Toast.makeText(getApplicationContext(), "Ingrese su Estrato", Toast.LENGTH_SHORT).show();
+                    scrollView.post(new Runnable() {
                         @Override
                         public void run() {
-                            scrollView.fullScroll ( ScrollView.FOCUS_UP );
+                            scrollView.fullScroll(ScrollView.FOCUS_UP);
                         }
-                    } );
-                    genderL.setBackgroundColor ( Color.parseColor ( redColor ) );
+                    });
+                    stratumL.setBackgroundColor(Color.parseColor(redColor));
                 }
             });
             return false;

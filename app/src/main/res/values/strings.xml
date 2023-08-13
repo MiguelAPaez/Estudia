@@ -35,4 +35,15 @@
     <string name="gender_placeholder">Selecciona tu género</string>
     <string name="signup_label_button">Regístrate</string>
 
+    <!--    Confirm Screen-->
+
+    <string name="title_confirm">Confirma tu correo</string>
+    <string name="subtitle_confirm">¡Ya casi terminas tu registro! Ingresa el código de confirmación que llegó a tu correo</string>
+    <string name="code_confirm_placeholder">Código confirmación</string>
+    <string name="confirm_label_button">Confirmar</string>
+
+    <!--    Custom Register Screen-->
+    <string name="back_button_label">Atrás</string>
+    <string name="next_button_label">Siguiente</string>
+
 </resources>

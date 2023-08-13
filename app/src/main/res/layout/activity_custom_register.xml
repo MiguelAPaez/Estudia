@@ -6,4 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".CustomRegister">
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/slideViewPagerRegister"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backButtonCustomerRegister"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_left_button"
+        android:text="@string/back_button_label"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:gravity="center|center_vertical"
+        android:textColor="@color/white_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/nextButtonCustomerRegister"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_right_button"
+        android:text="@string/next_button_label"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:gravity="center|center_vertical"
+        android:textColor="@color/white_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/indicatorLayoutRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slideViewPagerRegister" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

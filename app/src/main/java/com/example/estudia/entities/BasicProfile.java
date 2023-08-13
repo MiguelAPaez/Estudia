@@ -12,7 +12,7 @@ public class BasicProfile extends Profile {
         super(email);
         this.name = name;
         this.lastName = lastName;
-        this.phone = phone;
+        this.phone = "+57" + phone;
         this.age = age;
         this.stratum = stratum;
         this.gender = gender;
