@@ -45,5 +45,13 @@
     <!--    Custom Register Screen-->
     <string name="back_button_label">Atrás</string>
     <string name="next_button_label">Siguiente</string>
+    <string name="title_page_1">¡Somos Estudia!</string>
+    <string name="title_page_2">Encuentra tu carrera</string>
+    <string name="title_page_3">Estudia en la modalidad que desees</string>
+    <string name="title_page_4">Y no olvides nuestra mascota</string>
+    <string name="subtitle_page_1">La app que te ayudará a encontrar la carrera que deseas. Conoceremos un poco más de ti para ofertarte las carreras que el Sena tiene para ti</string>
+    <string name="subtitle_page_2">Buscamos la mejor carrera que se acomode a tus intereses y que esté acorde a tus habilidades. Lo único que requerimos es de tu total honestidad en nuestro proceso.</string>
+    <string name="subtitle_page_3">Queremos que encuentres la carrera que desees, acorde a tus preferencias</string>
+    <string name="subtitle_page_4">No seríamos nada sin nuestros peludos, ellos hacen parte de Estudia y de ti</string>
 
 </resources>

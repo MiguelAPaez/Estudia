@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -19,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
+import com.example.estudia.facades.CognitoImplementation;
 import com.example.estudia.validations.ValidationsService;
 
 import java.util.Calendar;
@@ -38,8 +38,8 @@ public class Register extends AppCompatActivity {
     boolean validacionOK;
     private DatePickerDialog datePickerDialog;
 
-    //Register Service
-    AmplifyCognito amplifyCognito;
+    //Cognito Service
+    CognitoImplementation cognitoImplementation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +77,7 @@ public class Register extends AppCompatActivity {
         //Validaciones
         validations = new ValidationsService();
 
-        amplifyCognito = new AmplifyCognito(getApplicationContext());
+        cognitoImplementation = new CognitoImplementation(getApplicationContext());
 
         initDatePicker();
 
@@ -101,7 +101,7 @@ public class Register extends AppCompatActivity {
                         fillData ();
                         Profile profile = createProfile();;
                         BasicProfile basicProfile = createBasicProfile();
-                        amplifyCognito.signUp(profile, basicProfile);
+                        cognitoImplementation.signUp(profile, basicProfile);
                     }
                 }
             }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
+import com.example.estudia.facades.CognitoImplementation;
 import com.example.estudia.validations.ValidationsService;
 
 public class Confirm extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class Confirm extends AppCompatActivity {
     ValidationsService validations;
 
     //Confirm Service
-    AmplifyCognito amplifyCognito;
+    CognitoImplementation cognitoImplementation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class Confirm extends AppCompatActivity {
         //Validaciones
         validations = new ValidationsService();
 
-        amplifyCognito = new AmplifyCognito(getApplicationContext());
+        cognitoImplementation = new CognitoImplementation(getApplicationContext());
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +62,7 @@ public class Confirm extends AppCompatActivity {
                 if (!validations.Vacio(eCodeConfirm)) {
                     code = eCodeConfirm.getText().toString().trim();
                     Log.i("code:", code);
-                    amplifyCognito.confirmEmail(profile, basicProfile, code);
+                    cognitoImplementation.confirmEmail(profile, basicProfile, code);
                 } else {
                     runOnUiThread(new Runnable() {
                         @Override
