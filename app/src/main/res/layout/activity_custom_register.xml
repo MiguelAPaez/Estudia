@@ -25,6 +25,7 @@
         android:textSize="14sp"
         android:textAllCaps="false"
         android:gravity="center|center_vertical"
+        android:visibility="invisible"
         android:textColor="@color/white_400"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

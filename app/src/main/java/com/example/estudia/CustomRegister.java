@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,7 +21,6 @@ public class CustomRegister extends AppCompatActivity {
     Button backBtn, nextBtn;
 
     TextView[] dots;
-    ViewPagerCustomerRegisterAdapter viewPagerCustomerRegisterAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,6 @@ public class CustomRegister extends AppCompatActivity {
 
         backBtn = findViewById(R.id.backButtonCustomerRegister);
         nextBtn = findViewById(R.id.nextButtonCustomerRegister);
-
-        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerRegister);
-        mDotLayout = (LinearLayout) findViewById(R.id.indicatorLayoutRegister);
-
-        mSlideViewPager.setAdapter(new ViewPagerCustomerRegisterAdapter(this));
-
-        setUpIndicator(0);
-        mSlideViewPager.addOnPageChangeListener(viewListener);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +51,14 @@ public class CustomRegister extends AppCompatActivity {
                 }
             }
         });
+
+        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerRegister);
+        mDotLayout = (LinearLayout) findViewById(R.id.indicatorLayoutRegister);
+
+        setUpIndicator(0);
+        mSlideViewPager.addOnPageChangeListener(viewListener);
+
+        mSlideViewPager.setAdapter(new ViewPagerCustomerRegisterAdapter(this));
 
     }
 
@@ -99,6 +99,7 @@ public class CustomRegister extends AppCompatActivity {
     };
 
     private int getItem(int i) {
+        Log.i("Entré al getItem", "Holiii soy yop");
         return mSlideViewPager.getCurrentItem() + i;
     }
 }

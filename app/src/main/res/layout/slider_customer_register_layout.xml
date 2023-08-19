@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/questionSubtitleCustomerRegister"
-            android:text="Holahdshjhasdh"
+            android:text="@string/title_register"
             android:layout_marginTop="20dp"
             android:textAlignment="center"
             style="@style/TitleMediumTextView"/>
