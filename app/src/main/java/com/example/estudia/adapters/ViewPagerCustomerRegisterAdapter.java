@@ -36,8 +36,6 @@ public class ViewPagerCustomerRegisterAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        Log.i("Entré a", "instantiateItem");
-        Log.i("position", Integer.toString(position));
         CustomRegisterEnum customRegisterObj = CustomRegisterEnum.values()[position];
         LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slider_customer_register_layout, container, false);
@@ -46,18 +44,10 @@ public class ViewPagerCustomerRegisterAdapter extends PagerAdapter {
         TextView slideHeading = (TextView) view.findViewById(R.id.questionTitleCustomerRegister);
         TextView slideDescription = (TextView) view.findViewById(R.id.questionSubtitleCustomerRegister);
 
-//        Log.i("headings",Integer.toString(headings[position]));
-//        Log.i("descriptions",Integer.toString(descriptions[position]));
-//        Log.i("images",Integer.toString(images[position]));
-
         slideTitleImage.setImageResource(customRegisterObj.getImageResId());
         slideHeading.setText(customRegisterObj.getTitleResId());
         slideDescription.setText(customRegisterObj.getDescriptionResId());
-
-        Log.i("title", slideHeading.getText().toString());
-        Log.i("subtitle", slideDescription.getText().toString());;
-        System.out.println("view -> ");
-        System.out.println(view);
+        ;
 
         container.addView(view);
         return view;

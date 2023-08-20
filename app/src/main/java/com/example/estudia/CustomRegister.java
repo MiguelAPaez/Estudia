@@ -99,7 +99,6 @@ public class CustomRegister extends AppCompatActivity {
     };
 
     private int getItem(int i) {
-        Log.i("Entré al getItem", "Holiii soy yop");
         return mSlideViewPager.getCurrentItem() + i;
     }
 }
