@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 
+import com.amplifyframework.auth.AuthUserAttribute;
 import com.amplifyframework.auth.AuthUserAttributeKey;
 import com.amplifyframework.auth.cognito.result.AWSCognitoAuthSignOutResult;
 import com.amplifyframework.auth.cognito.result.GlobalSignOutError;
@@ -16,9 +17,10 @@ import com.amplifyframework.core.Amplify;
 import com.example.estudia.Confirm;
 import com.example.estudia.CustomRegister;
 import com.example.estudia.Login;
-import com.example.estudia.MainActivity;
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
+
+import java.util.ArrayList;
 
 public class CognitoImplementation {
     Context context;
@@ -29,24 +31,15 @@ public class CognitoImplementation {
 
     public void signUp(Profile userProfile, BasicProfile basicUserProfile) {
 
-        AuthSignUpOptions options = AuthSignUpOptions.builder()
-                .userAttribute(AuthUserAttributeKey.name(), basicUserProfile.getName())
-                .userAttribute(AuthUserAttributeKey.familyName(), basicUserProfile.getLastName())
-                .userAttribute(AuthUserAttributeKey.phoneNumber(), basicUserProfile.getPhone())
-                .userAttribute(AuthUserAttributeKey.custom("age"), basicUserProfile.getAge())
-                .userAttribute(AuthUserAttributeKey.custom("stratum"), basicUserProfile.getStratum())
-                .userAttribute(AuthUserAttributeKey.gender(), basicUserProfile.getGender())
-                .build();
+        ArrayList<AuthUserAttribute> attributes = new ArrayList<>();
+        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.name(), basicUserProfile.getName()));
+        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.familyName(), basicUserProfile.getLastName()));
+        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.phoneNumber(), basicUserProfile.getPhone()));
+        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.zoneInfo(), basicUserProfile.getStratum()));
+        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.nickname(), basicUserProfile.getAge()));
+        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.gender(), basicUserProfile.getGender()));
 
-//        ArrayList<AuthUserAttribute> attributes = new ArrayList<>();
-//        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.name(), basicUserProfile.getName()));
-//        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.familyName(), basicUserProfile.getLastName()));
-//        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.phoneNumber(), basicUserProfile.getPhone()));
-//        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.birthdate(), basicUserProfile.getAge()));
-//        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.zoneInfo(), basicUserProfile.getStratum()));
-//        attributes.add(new AuthUserAttribute(AuthUserAttributeKey.gender(), basicUserProfile.getGender()));
-
-        Amplify.Auth.signUp(userProfile.getEmail(), userProfile.getPassword(), options,
+        Amplify.Auth.signUp(userProfile.getEmail(), userProfile.getPassword(), AuthSignUpOptions.builder().userAttributes(attributes).build(),
                 result -> {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
 //                    showToast("Se han registrado los datos básicos del usuario");
@@ -120,8 +113,7 @@ public class CognitoImplementation {
                     Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete");
                     if (result.isSignUpComplete()) {
 //                        showToast("Se ha confirmado tu cuenta");
-                        Intent intent = new Intent(context, Login.class);
-                        sendToActivity(intent);
+                        signIn(userProfile.getEmail(), userProfile.getPassword());
                     } else {
 //                        showToast("Ingrese un código de confirmación válido");
                     }
