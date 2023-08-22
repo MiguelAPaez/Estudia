@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.estudia.facades.CognitoImplementation;
-import com.example.estudia.validations.ValidationsService;
+import com.example.estudia.services.ValidationsService;
 
 public class Login extends AppCompatActivity {
 
@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
 
         //EditText de Login
         eEmail = (EditText) findViewById (R.id.emailLogin);
-        ePassword = (EditText) findViewById (R.id.passLogin);
+        ePassword = (EditText) findViewById(R.id.passLogin);
 
         //Button
         btnLogin = (Button) findViewById(R.id.loginButton);
@@ -45,13 +45,15 @@ public class Login extends AppCompatActivity {
         //Cognito Service
         cognitoImplementation = new CognitoImplementation(getApplicationContext());
 
-        final TextView txtSub = (TextView)findViewById(R.id.buttonRegisterLogin);
-        txtSub.setOnClickListener(new View.OnClickListener (){
+        cognitoImplementation.getCurrentUser();
+
+        final TextView txtSub = (TextView) findViewById(R.id.buttonRegisterLogin);
+        txtSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent intent = new Intent( v.getContext(), Register.class);
-                intent.putExtra ( "activity" , "login" );
+                Intent intent = new Intent(v.getContext(), Register.class);
+                intent.putExtra("activity", "login");
                 startActivity(intent);
             }
         });

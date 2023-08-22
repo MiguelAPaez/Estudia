@@ -1,4 +1,4 @@
-package com.example.estudia.validations;
+package com.example.estudia.services;
 
 import android.text.TextUtils;
 import android.widget.EditText;

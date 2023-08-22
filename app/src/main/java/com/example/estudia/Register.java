@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
 import com.example.estudia.facades.CognitoImplementation;
-import com.example.estudia.validations.ValidationsService;
+import com.example.estudia.services.ValidationsService;
 
 import java.util.Calendar;
 

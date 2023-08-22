@@ -17,16 +17,20 @@ import com.amplifyframework.core.Amplify;
 import com.example.estudia.Confirm;
 import com.example.estudia.CustomRegister;
 import com.example.estudia.Login;
+import com.example.estudia.MainActivity;
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
+import com.example.estudia.services.PreferencesEstudiaService;
 
 import java.util.ArrayList;
 
 public class CognitoImplementation {
     Context context;
+    PreferencesEstudiaService preferencesEstudiaService;
 
     public CognitoImplementation(Context context) {
         this.context = context;
+        this.preferencesEstudiaService = new PreferencesEstudiaService(this.context);
     }
 
     public void signUp(Profile userProfile, BasicProfile basicUserProfile) {
@@ -60,6 +64,7 @@ public class CognitoImplementation {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignedIn() ? "Sign in succeeded" : "Sign in not complete");
                     if(result.isSignedIn()) {
+                        userAttributes();
                         Intent intent = new Intent(context, CustomRegister.class);
                         sendToActivity(intent);
                     }
@@ -127,9 +132,33 @@ public class CognitoImplementation {
 
     public void userAttributes() {
         Amplify.Auth.fetchUserAttributes(
-                attributes -> Log.i("AuthDemo", "User attributes = " + attributes.toString()),
+                attributes -> {
+                    Log.i("AuthDemo", "User attributes = " + attributes.toString());
+                    Object[] elements = attributes.toArray();
+                    for (int i = 0; i <= elements.length; i++) {
+                        AuthUserAttribute dataElement = (AuthUserAttribute) elements[i];
+                        AuthUserAttributeKey key = (AuthUserAttributeKey) dataElement.getKey();
+                        this.preferencesEstudiaService.writeAttribute(key.getKeyString(), dataElement.getValue());
+                    }
+                },
                 error -> Log.e("AuthDemo", "Failed to fetch user attributes.", error)
         );
+    }
+
+    public void getCurrentUser() {
+        try {
+            Amplify.Auth.getCurrentUser(
+                    result -> {
+                        Log.i("AuthQuickstart", "Current user details are:" + result.toString());
+                        userAttributes();
+                        Intent intent = new Intent(context, MainActivity.class);
+                        sendToActivity(intent);
+                    },
+                    error -> Log.e("AuthQuickstart", "getCurrentUser failed with an exception: " + error)
+            );
+        } catch (Exception error) {
+            Log.e("AuthQuickstart", "unexpected error: " + error);
+        }
     }
 
     public void sendToActivity(Intent intent) {
