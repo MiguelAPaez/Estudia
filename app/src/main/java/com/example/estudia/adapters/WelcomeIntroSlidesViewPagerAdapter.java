@@ -37,7 +37,7 @@ public class WelcomeIntroSlidesViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         CustomRegisterEnum customRegisterObj = CustomRegisterEnum.values()[position];
         LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.slider_customer_register_layout, container, false);
+        View view = layoutInflater.inflate(R.layout.slider_welcome_intro_layout, container, false);
 
         ImageView slideTitleImage = (ImageView) view.findViewById(R.id.questionImageTitleCustomerRegister);
         TextView slideHeading = (TextView) view.findViewById(R.id.questionTitleCustomerRegister);
