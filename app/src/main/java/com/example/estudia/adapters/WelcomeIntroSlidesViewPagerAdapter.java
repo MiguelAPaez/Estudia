@@ -1,7 +1,6 @@
 package com.example.estudia.adapters;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +15,10 @@ import com.example.estudia.R;
 import com.example.estudia.enums.CustomRegisterEnum;
 
 
-public class ViewPagerCustomerRegisterAdapter extends PagerAdapter {
+public class WelcomeIntroSlidesViewPagerAdapter extends PagerAdapter {
     Context mContext;
 
-    public ViewPagerCustomerRegisterAdapter (Context context) {
+    public WelcomeIntroSlidesViewPagerAdapter(Context context) {
         this.mContext = context;
     }
 

@@ -6,15 +6,14 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.estudia.adapters.ViewPagerCustomerRegisterAdapter;
+import com.example.estudia.adapters.WelcomeIntroSlidesViewPagerAdapter;
 
-public class CustomRegister extends AppCompatActivity {
+public class WelcomeIntroSlides extends AppCompatActivity {
 
     ViewPager mSlideViewPager;
     LinearLayout mDotLayout;
@@ -25,7 +24,7 @@ public class CustomRegister extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_register);
+        setContentView(R.layout.activity_welcome_intro_slides);
 
         backBtn = findViewById(R.id.backButtonCustomerRegister);
         nextBtn = findViewById(R.id.nextButtonCustomerRegister);
@@ -58,7 +57,7 @@ public class CustomRegister extends AppCompatActivity {
         setUpIndicator(0);
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
-        mSlideViewPager.setAdapter(new ViewPagerCustomerRegisterAdapter(this));
+        mSlideViewPager.setAdapter(new WelcomeIntroSlidesViewPagerAdapter(this));
 
     }
 

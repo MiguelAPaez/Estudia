@@ -17,7 +17,7 @@
             android:name=".Confirm"
             android:exported="false" />
         <activity
-            android:name=".CustomRegister"
+            android:name=".WelcomeIntroSlides"
             android:exported="false" />
         <activity
             android:name=".BaseTemplate"

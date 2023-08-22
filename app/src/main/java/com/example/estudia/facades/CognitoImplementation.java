@@ -1,8 +1,6 @@
 package com.example.estudia.facades;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 
@@ -15,22 +13,25 @@ import com.amplifyframework.auth.cognito.result.RevokeTokenError;
 import com.amplifyframework.auth.options.AuthSignUpOptions;
 import com.amplifyframework.core.Amplify;
 import com.example.estudia.Confirm;
-import com.example.estudia.CustomRegister;
+import com.example.estudia.WelcomeIntroSlides;
 import com.example.estudia.Login;
 import com.example.estudia.MainActivity;
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
 import com.example.estudia.services.PreferencesEstudiaService;
+import com.example.estudia.services.ToastEstudiaService;
 
 import java.util.ArrayList;
 
 public class CognitoImplementation {
     Context context;
     PreferencesEstudiaService preferencesEstudiaService;
+    ToastEstudiaService toastEstudiaService;
 
     public CognitoImplementation(Context context) {
         this.context = context;
         this.preferencesEstudiaService = new PreferencesEstudiaService(this.context);
+        this.toastEstudiaService = new ToastEstudiaService(this.context);
     }
 
     public void signUp(Profile userProfile, BasicProfile basicUserProfile) {
@@ -46,7 +47,7 @@ public class CognitoImplementation {
         Amplify.Auth.signUp(userProfile.getEmail(), userProfile.getPassword(), AuthSignUpOptions.builder().userAttributes(attributes).build(),
                 result -> {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
-//                    showToast("Se han registrado los datos básicos del usuario");
+//                    this.toastEstudiaService.showToast("Se han registrado los datos básicos del usuario");
                     Intent intent = new Intent(context, Confirm.class);
                     intent.putExtra("profile", userProfile);
                     intent.putExtra("basicProfile", basicUserProfile);
@@ -54,7 +55,7 @@ public class CognitoImplementation {
                 },
                 error -> {
                     Log.e("AuthQuickStart", "Sign up failed", error);
-//                    showToast("Falla en el servicio de registro. Intenta nuevamente");
+//                    this.toastEstudiaService.showToast("Falla en el servicio de registro. Intenta nuevamente");
                 }
         );
     }
@@ -65,7 +66,7 @@ public class CognitoImplementation {
                     Log.i("AuthQuickstart", result.isSignedIn() ? "Sign in succeeded" : "Sign in not complete");
                     if(result.isSignedIn()) {
                         userAttributes();
-                        Intent intent = new Intent(context, CustomRegister.class);
+                        Intent intent = new Intent(context, WelcomeIntroSlides.class);
                         sendToActivity(intent);
                     }
                 },
@@ -117,15 +118,15 @@ public class CognitoImplementation {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete");
                     if (result.isSignUpComplete()) {
-//                        showToast("Se ha confirmado tu cuenta");
+//                        this.toastEstudiaService.showToast("Se ha confirmado tu cuenta");
                         signIn(userProfile.getEmail(), userProfile.getPassword());
                     } else {
-//                        showToast("Ingrese un código de confirmación válido");
+//                        this.toastEstudiaService.showToast("Ingrese un código de confirmación válido");
                     }
                 },
                 error -> {
                     Log.e("AuthQuickstart", error.toString());
-//                    showToast("Falla en el servicio de confirmación. Intenta nuevamente");
+//                    this.toastEstudiaService.showToast("Falla en el servicio de confirmación. Intenta nuevamente");
                 }
         );
     }
@@ -164,22 +165,5 @@ public class CognitoImplementation {
     public void sendToActivity(Intent intent) {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
-    }
-
-    public void showToast(String message) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this.context.getApplicationContext());
-        // Set Alert Title
-        builder.setTitle("Notificación");
-        // Set the message show for the Alert time
-        builder.setMessage(message);
-        // Set the Negative button with No name Lambda OnClickListener method is use of DialogInterface interface.
-        builder.setNegativeButton("Ok", (DialogInterface.OnClickListener) (dialog, which) -> {
-            // If user click no then dialog box is canceled.
-            dialog.cancel();
-        });
-        // Create the Alert dialog
-        AlertDialog alertDialog = builder.create();
-        // Show the Alert Dialog box
-        alertDialog.show();
     }
 }
