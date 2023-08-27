@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.customer_register.NineCustomerRegisterFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/questionTitleNineCustomerRegister"
+            android:text="@string/motivation_question_1"
+            android:layout_marginTop="0dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TitleTextView" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutNineCustomerRegister"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/questionTitleNineCustomerRegister"
+            style="@style/LinearLayoutTextEdit">
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxStrokeColor="@color/white_500"
+                app:boxStrokeWidth="1dp"
+                app:placeholderTextColor="@color/grey_coal_300"
+                app:boxStrokeWidthFocused="1dp"
+                style="@style/WightHeightWrap">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNineCustomerRegister"
+                    android:hint="@string/motivation_placeholder"
+                    android:inputType="textCapWords"
+                    style="@style/TextInputEditStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CustomerRegisterSlides.class);
+                Intent intent = new Intent(getApplicationContext(), CustomerRegisterContainer.class);
                 startActivity(intent);
             }
         });
