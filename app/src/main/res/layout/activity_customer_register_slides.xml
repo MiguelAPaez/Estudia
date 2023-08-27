@@ -4,53 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeIntroSlides">
+    tools:context=".CustomerRegisterSlides">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/slideViewPagerWelcome"
+        android:id="@+id/slideViewPagerCustomRegister"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="50dp"
+        android:layout_marginVertical="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/backButtonWelcomeSlide"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
-        android:background="@drawable/rounded_left_button"
-        android:text="@string/back_button_label"
-        android:textSize="14sp"
+        android:id="@+id/backButtonCustomerRegisterSlide"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/back_mustard_rounded_button"
+        android:textSize="50sp"
         android:textAllCaps="false"
         android:gravity="center|center_vertical"
-        android:visibility="invisible"
         android:textColor="@color/white_400"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/nextButtonWelcomeSlide"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
-        android:background="@drawable/rounded_right_button"
-        android:text="@string/next_button_label"
-        android:textSize="14sp"
+        android:id="@+id/nextButtonCustomerRegisterSlide"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/next_mustard_rounded_button"
+        android:textSize="50sp"
         android:textAllCaps="false"
         android:gravity="center|center_vertical"
         android:textColor="@color/white_400"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/indicatorLayoutRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slideViewPagerWelcome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.estudia.R;
-import com.example.estudia.enums.CustomRegisterEnum;
+import com.example.estudia.enums.WelcomeSlidesEnum;
 
 
 public class WelcomeIntroSlidesViewPagerAdapter extends PagerAdapter {
@@ -24,7 +24,7 @@ public class WelcomeIntroSlidesViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return CustomRegisterEnum.values().length;
+        return WelcomeSlidesEnum.values().length;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class WelcomeIntroSlidesViewPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        CustomRegisterEnum customRegisterObj = CustomRegisterEnum.values()[position];
+        WelcomeSlidesEnum customRegisterObj = WelcomeSlidesEnum.values()[position];
         LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(mContext.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slider_welcome_intro_layout, container, false);
 

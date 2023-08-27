@@ -10,8 +10,7 @@
         tools:ignore="MissingConstraints"
         style="@style/LinearLayoutBase">
 
-        <LinearLayout
-            style="@style/LinearLayoutAlignItems">
+        <LinearLayout style="@style/LinearLayoutAlignItems">
 
             <TextView
                 android:id="@+id/welcomeMessageMain"
@@ -19,12 +18,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="300sp"
                 android:textAlignment="center"
-                android:text="Hello World!"/>
+                android:text="Hello World!" />
+
+            <Button
+                android:id="@+id/nextRegister"
+                android:text="Seguir registro"
+                style="@style/PrincipalButtonStyle" />
 
             <Button
                 android:id="@+id/buttonLogOut"
                 android:text="Salir"
-                style="@style/PrincipalButtonStyle"/>
+                style="@style/PrincipalButtonStyle" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

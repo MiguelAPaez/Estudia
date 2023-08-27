@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/questionTitleCustomerRegister"
+            android:text="@string/title_register"
+            android:layout_marginTop="0dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TitleTextView" />
+
+        <Switch
+            android:id="@+id/switchCustomerRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="50dp"
+            android:textOn="Si"
+            android:textOff="No"
+            android:textSize="50sp"
+            android:visibility="invisible"
+            android:showText="true"
+            android:textColor="@color/grey_coal_500"
+            android:thumbTextPadding="5dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:thumb="@drawable/baseline_brightness_1_50"
+            android:track="@drawable/track_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/questionTitleCustomerRegister"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Spinner
+            android:id="@+id/spinnerCustomerRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="invisible"
+            android:textColor="@color/grey_coal_400"
+            android:backgroundTint="@color/grey_coal_400"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/questionTitleCustomerRegister"
+            android:entries="@array/gender" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutCustomerRegister"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/questionTitleCustomerRegister"
+            style="@style/LinearLayoutTextEdit">
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:boxStrokeColor="@color/white_500"
+                app:boxStrokeWidth="1dp"
+                app:placeholderTextColor="@color/grey_coal_300"
+                app:boxStrokeWidthFocused="1dp"
+                style="@style/WightHeightWrap">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/motivationRegister"
+                    android:hint="@string/motivation_placeholder"
+                    android:inputType="textCapWords"
+                    style="@style/TextInputEditStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

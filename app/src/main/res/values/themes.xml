@@ -10,7 +10,7 @@
         <item name="android:textColorPrimary">@color/white_400</item>
     </style>
 
-<!--    Constraints Layouts Styles-->
+    <!--    Constraints Layouts Styles-->
 
     <style name="ConstraintLayoutBase">
         <item name="android:layout_width">match_parent</item>
@@ -18,7 +18,7 @@
         <item name="android:background">@color/mustard_500</item>
     </style>
 
-<!--    Width & Height Base Styles-->
+    <!--    Width & Height Base Styles-->
 
     <style name="WightHeightBase">
         <item name="android:layout_width">match_parent</item>
@@ -30,7 +30,7 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-<!--    Linear Layouts Styles-->
+    <!--    Linear Layouts Styles-->
 
     <style name="LinearLayoutBase">
         <item name="android:layout_width">match_parent</item>
@@ -60,7 +60,7 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
-<!--    Text Views Styles-->
+    <!--    Text Views Styles-->
 
     <style name="TitleTextView">
         <item name="android:layout_width">match_parent</item>
@@ -110,7 +110,7 @@
         <item name="android:textColor">@color/tangerine_300</item>
     </style>
 
-<!--    Buttons Style-->
+    <!--    Buttons Style-->
 
     <style name="PrincipalButtonStyle">
         <item name="android:layout_width">match_parent</item>
@@ -124,7 +124,7 @@
         <item name="android:layout_gravity">center</item>
     </style>
 
-<!--    Text Input Edit Text-->
+    <!--    Text Input Edit Text-->
 
     <style name="TextInputEditStyle" parent="@style/WightHeightWrap">
         <item name="android:textColor">@color/grey_coal_200</item>
@@ -137,7 +137,7 @@
         <item name="android:textColor">@color/grey_coal_200</item>
     </style>
 
-<!--    Hint Appearance Styles-->
+    <!--    Hint Appearance Styles-->
 
     <style name="HelperTextAppearance">
         <item name="android:textColor">@android:color/white</item>
@@ -152,4 +152,13 @@
     </style>
 
     <style name="Theme.Estudia" parent="Base.Theme.Estudia" />
+
+    <style name="Theme.Estudia.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Estudia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Estudia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

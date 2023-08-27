@@ -42,7 +42,7 @@
     <string name="code_confirm_placeholder">Código confirmación</string>
     <string name="confirm_label_button">Confirmar</string>
 
-    <!--    Custom Register Screen-->
+    <!--    Welcome Intro Screen-->
     <string name="back_button_label">Atrás</string>
     <string name="next_button_label">Siguiente</string>
     <string name="title_page_1">¡Somos Estudia!</string>
@@ -53,4 +53,19 @@
     <string name="subtitle_page_2">Buscamos la mejor carrera que se acomode a tus intereses y que esté acorde a tus habilidades. Lo único que requerimos es de tu total honestidad en nuestro proceso.</string>
     <string name="subtitle_page_3">Queremos que encuentres la carrera que desees, acorde a tus preferencias</string>
     <string name="subtitle_page_4">No seríamos nada sin nuestros peludos, ellos hacen parte de Estudia y de ti</string>
+
+    <!--    Customer Register Screen-->
+    <string name="race_question_1">¿Perteneces a algún grupo étnico o raizal?</string>
+    <string name="race_question_2">¿A cuál grupo étnico perteneces?</string>
+    <string name="disability_question_1">¿Posees alguna discapacidad o capacidad diferente?</string>
+    <string name="disability_question_2">¿Cuál discapacidad posees?</string>
+    <string name="work_question_1">¿Has trabajado en alguna ocupación antes?</string>
+    <string name="work_question_2">¿En qué has trabajado?</string>
+    <string name="work_question_3">¿Qué tipo de experticia lograste?</string>
+    <string name="study_question_1">¿Cuál es tu nivel de estudios?</string>
+    <string name="motivation_question_1">¿Cuál es tu motivación para estudiar?</string>
+    <string name="motivation_placeholder">Ingresa una palabra</string>
+    <string name="title_activity_customer_fragments">CustomerFragments</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

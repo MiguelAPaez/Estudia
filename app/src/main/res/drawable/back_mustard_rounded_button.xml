@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <corners android:radius="20dp" />
+            <solid android:color="@color/mustard_500" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/back_arrow"
+        android:gravity="center_horizontal"
+        android:bottom="20dp"
+        android:left="20dp"
+        android:right="25dp"
+        android:top="20dp" />
+</layer-list>

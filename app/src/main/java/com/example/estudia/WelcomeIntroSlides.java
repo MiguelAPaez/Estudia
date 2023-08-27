@@ -26,13 +26,13 @@ public class WelcomeIntroSlides extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_intro_slides);
 
-        backBtn = findViewById(R.id.backButtonCustomerRegister);
-        nextBtn = findViewById(R.id.nextButtonCustomerRegister);
+        backBtn = findViewById(R.id.backButtonWelcomeSlide);
+        nextBtn = findViewById(R.id.nextButtonWelcomeSlide);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(getItem(0) > 0) {
+                if (getItem(0) > 0) {
                     mSlideViewPager.setCurrentItem(getItem(-1), true);
                 }
             }
@@ -51,7 +51,7 @@ public class WelcomeIntroSlides extends AppCompatActivity {
             }
         });
 
-        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerRegister);
+        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerWelcome);
         mDotLayout = (LinearLayout) findViewById(R.id.indicatorLayoutRegister);
 
         setUpIndicator(0);

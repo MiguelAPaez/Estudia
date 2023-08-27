@@ -32,44 +32,5 @@
             android:layout_marginTop="20dp"
             android:textAlignment="center"
             style="@style/TitleMediumTextView"/>
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/buttonsPanelCustomerRegister"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <Button-->
-<!--                android:id="@+id/yesButtonCustomerRegister"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="0.5"-->
-<!--                android:background="@drawable/rounded_customer_register_button"-->
-<!--                android:text="Si"-->
-<!--                android:textColor="@color/grey_coal_500" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/notButtonCustomerRegister"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="0.5"-->
-<!--                android:background="@drawable/rounded_customer_register_button"-->
-<!--                android:text="No"-->
-<!--                android:textColor="@color/grey_coal_500" />-->
-<!--        </LinearLayout>-->
-
-<!--        <Spinner-->
-<!--            android:id="@+id/spinnerCustomerRegister"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            android:textColor="@color/grey_coal_400"-->
-<!--            android:backgroundTint="@color/grey_coal_400"-->
-<!--            android:entries="@array/gender" />-->
     </LinearLayout>
 </LinearLayout>
