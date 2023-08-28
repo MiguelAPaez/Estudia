@@ -1,6 +1,7 @@
 package com.example.estudia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,11 +10,12 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.estudia.R;
+import com.example.estudia.adapters.PersonalitySurveyViewPagerAdapter;
 
 public class PersonalitySurvey extends AppCompatActivity {
 
-    Button yesButton, noButton;
     ProgressBar progressBar;
+    ViewPager mSlideViewPager;
     int currentProgress = 0;
 
     @Override
@@ -21,37 +23,29 @@ public class PersonalitySurvey extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personality_survey);
 
-        yesButton = (Button) findViewById(R.id.yesButton);
-        noButton = (Button) findViewById(R.id.noButton);
         progressBar = (ProgressBar) findViewById(R.id.progressBarSurvey);
 
-        yesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!yesButton.isSelected()) {
-                    yesButton.setTextColor(getApplicationContext().getResources().getColor(R.color.white_300));
-                    noButton.setTextColor(getApplicationContext().getResources().getColor(R.color.grey_100));
-                    noButton.setSelected(yesButton.isSelected());
-                    yesButton.setSelected(!yesButton.isSelected());
-                }
-                currentProgress = currentProgress + 10;
-                progressBar.setProgress(currentProgress);
-            }
-        });
+        mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerPersonalitySurvey);
+        mSlideViewPager.addOnPageChangeListener(viewListener);
 
-        noButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!noButton.isSelected()) {
-                    noButton.setTextColor(getApplicationContext().getResources().getColor(R.color.white_300));
-                    yesButton.setTextColor(getApplicationContext().getResources().getColor(R.color.grey_100));
-                    yesButton.setSelected(noButton.isSelected());
-                    noButton.setSelected(!noButton.isSelected());
-                }
-                currentProgress = currentProgress - 10;
-                progressBar.setProgress(currentProgress);
-            }
-        });
-
+        mSlideViewPager.setAdapter(new PersonalitySurveyViewPagerAdapter(this));
     }
+
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
+
 }
