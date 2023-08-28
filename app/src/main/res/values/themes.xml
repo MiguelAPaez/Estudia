@@ -124,6 +124,18 @@
         <item name="android:layout_gravity">center</item>
     </style>
 
+    <style name="SurveyButtonStyle">
+        <item name="android:layout_width">199dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:background">@drawable/rounded_personality_survey_button</item>
+        <item name="android:textColor">@color/grey_100</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
     <!--    Text Input Edit Text-->
 
     <style name="TextInputEditStyle" parent="@style/WightHeightWrap">

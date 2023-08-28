@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        tools:ignore="MissingConstraints"
+        style="@style/LinearLayoutBase">
+
+        <ScrollView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/WightHeightBase">
+
+            <LinearLayout style="@style/LinearLayoutAlignItems">
+
+                <TextView
+                    android:id="@+id/textProgressTitle"
+                    android:text="@string/title_personality_survey_start"
+                    style="@style/TitleTextView" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarSurvey"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_marginTop="20dp"
+                    android:max="100"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/survey_progress_bar_bg" />
+
+                <TextView
+                    android:id="@+id/textQuestionSurvey"
+                    android:text="@string/personality_question_1"
+                    android:textSize="26sp"
+                    android:layout_marginTop="45dp"
+                    style="@style/TitleMediumTextView" />
+
+                <Button
+                    android:id="@+id/yesButton"
+                    android:text="@string/button_survey_yes"
+                    style="@style/SurveyButtonStyle" />
+
+                <Button
+                    android:id="@+id/noButton"
+                    android:text="@string/button_survey_no"
+                    style="@style/SurveyButtonStyle" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,4 +68,12 @@
     <string name="title_activity_customer_fragments">CustomerFragments</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+
+
+    <!--    Personality Survey Screen-->
+    <string name="title_personality_survey_start">¡Vamos, Inicia!</string>
+
+    <string name="personality_question_1">¿Te gusta leer libros o revistas científicas?</string>
+    <string name="button_survey_yes">Si</string>
+    <string name="button_survey_no">No</string>
 </resources>

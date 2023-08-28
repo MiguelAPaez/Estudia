@@ -1,4 +1,4 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.NAME_USER;
 
@@ -11,12 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.estudia.R;
 import com.example.estudia.facades.CognitoImplementation;
 import com.example.estudia.services.PreferencesEstudiaService;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLogout, btnRegister;
+    Button btnLogout, btnRegister, btnSurvey;
     TextView eWelcomeMessage;
     CognitoImplementation cognitoImplementation;
     PreferencesEstudiaService preferencesEstudiaService;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnLogout = (Button) findViewById(R.id.buttonLogOut);
         btnRegister = (Button) findViewById(R.id.nextRegister);
+        btnSurvey = (Button) findViewById(R.id.personalitySurveyButton);
         eWelcomeMessage = (TextView) findViewById(R.id.welcomeMessageMain);
 
         //Cognito Service
@@ -66,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CustomerRegisterSlides.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSurvey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PersonalitySurvey.class);
                 startActivity(intent);
             }
         });

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         tools:ignore="MissingConstraints"
@@ -23,6 +23,11 @@
             <Button
                 android:id="@+id/nextRegister"
                 android:text="Seguir registro"
+                style="@style/PrincipalButtonStyle" />
+
+            <Button
+                android:id="@+id/personalitySurveyButton"
+                android:text="Encuesta"
                 style="@style/PrincipalButtonStyle" />
 
             <Button

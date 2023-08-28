@@ -1,8 +1,10 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.estudia.R;
 
 public class BaseTemplate extends AppCompatActivity {
 
