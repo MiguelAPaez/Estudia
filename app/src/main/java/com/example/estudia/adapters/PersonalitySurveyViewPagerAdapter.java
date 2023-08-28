@@ -21,12 +21,10 @@ import java.util.Map;
 public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
 
     Context mContext;
-    ViewPager mviewPager;
     private Map<Integer, Integer> answers = new HashMap<Integer, Integer>();
 
-    public PersonalitySurveyViewPagerAdapter(Context mContext, ViewPager viewPager) {
+    public PersonalitySurveyViewPagerAdapter(Context mContext) {
         this.mContext = mContext;
-        this.mviewPager = viewPager;
     }
 
     public interface OnButtonClickListener {

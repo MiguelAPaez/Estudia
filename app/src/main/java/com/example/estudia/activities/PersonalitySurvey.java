@@ -21,11 +21,12 @@ public class PersonalitySurvey extends AppCompatActivity {
         setContentView(R.layout.activity_personality_survey);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBarSurvey);
+        progressBar.setMax(60);
 
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerPersonalitySurvey);
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
-        PersonalitySurveyViewPagerAdapter personalitySurvey = new PersonalitySurveyViewPagerAdapter(this, mSlideViewPager);
+        PersonalitySurveyViewPagerAdapter personalitySurvey = new PersonalitySurveyViewPagerAdapter(this);
         mSlideViewPager.setAdapter(personalitySurvey);
 
         personalitySurvey.setButtonClickListener(new PersonalitySurveyViewPagerAdapter.OnButtonClickListener() {
@@ -33,6 +34,7 @@ public class PersonalitySurvey extends AppCompatActivity {
             public void OnButtonClick() {
                 int newPosition = mSlideViewPager.getCurrentItem() + 1;
                 mSlideViewPager.setCurrentItem(newPosition, false);
+                progressBar.setProgress(newPosition);
             }
         });
     }
