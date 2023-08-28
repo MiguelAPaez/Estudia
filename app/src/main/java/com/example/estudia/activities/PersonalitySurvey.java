@@ -3,10 +3,7 @@ package com.example.estudia.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.estudia.R;
@@ -28,7 +25,16 @@ public class PersonalitySurvey extends AppCompatActivity {
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPagerPersonalitySurvey);
         mSlideViewPager.addOnPageChangeListener(viewListener);
 
-        mSlideViewPager.setAdapter(new PersonalitySurveyViewPagerAdapter(this));
+        PersonalitySurveyViewPagerAdapter personalitySurvey = new PersonalitySurveyViewPagerAdapter(this, mSlideViewPager);
+        mSlideViewPager.setAdapter(personalitySurvey);
+
+        personalitySurvey.setButtonClickListener(new PersonalitySurveyViewPagerAdapter.OnButtonClickListener() {
+            @Override
+            public void OnButtonClick() {
+                int newPosition = mSlideViewPager.getCurrentItem() + 1;
+                mSlideViewPager.setCurrentItem(newPosition, false);
+            }
+        });
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {

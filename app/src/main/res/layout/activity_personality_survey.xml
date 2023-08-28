@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textProgressTitle" />
 
-    <androidx.viewpager.widget.ViewPager
+    <com.example.estudia.adapters.CustomViewPager
         android:id="@+id/slideViewPagerPersonalitySurvey"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

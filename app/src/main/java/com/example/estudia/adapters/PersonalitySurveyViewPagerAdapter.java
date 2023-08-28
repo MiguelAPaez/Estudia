@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.estudia.R;
 import com.example.estudia.enums.SurveyPersonalityQuestionsEnum;
@@ -20,10 +21,22 @@ import java.util.Map;
 public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
 
     Context mContext;
+    ViewPager mviewPager;
     private Map<Integer, Integer> answers = new HashMap<Integer, Integer>();
 
-    public PersonalitySurveyViewPagerAdapter(Context mContext) {
+    public PersonalitySurveyViewPagerAdapter(Context mContext, ViewPager viewPager) {
         this.mContext = mContext;
+        this.mviewPager = viewPager;
+    }
+
+    public interface OnButtonClickListener {
+        void OnButtonClick();
+    }
+
+    private OnButtonClickListener mButtonClickListener;
+
+    public void setButtonClickListener(OnButtonClickListener listener) {
+        mButtonClickListener = listener;
     }
 
     @Override
@@ -71,7 +84,9 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
                 answers.put(question.getIdQuestion(), 1);
                 System.out.println("ANSWERSSSS!!");
                 System.out.println(answers);
-                instantiateItem(container, position + 1);
+                if (mButtonClickListener != null) {
+                    mButtonClickListener.OnButtonClick();
+                }
             }
         });
         noButton.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +102,9 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
                 System.out.println("ANSWERSSSS!!");
                 System.out.println(answers);
                 instantiateItem(container, position + 1);
+                if (mButtonClickListener != null) {
+                    mButtonClickListener.OnButtonClick();
+                }
             }
         });
         container.addView(view);
