@@ -14,13 +14,11 @@
         android:theme="@style/Theme.Estudia"
         tools:targetApi="31">
         <activity
-            android:name=".activities.PersonalitySurvey"
+            android:name=".activities.IntroSurvey"
             android:exported="false" />
         <activity
-            android:name=".CustomerFragments"
-            android:exported="false"
-            android:label="@string/title_activity_customer_fragments"
-            android:theme="@style/Theme.Estudia.NoActionBar" />
+            android:name=".activities.PersonalitySurvey"
+            android:exported="false" />
         <activity
             android:name=".activities.CustomerRegisterSlides"
             android:exported="false" />

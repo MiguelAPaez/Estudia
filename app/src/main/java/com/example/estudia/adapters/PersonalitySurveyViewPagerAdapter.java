@@ -1,5 +1,7 @@
 package com.example.estudia.adapters;
 
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITIES;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +17,11 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.estudia.R;
 import com.example.estudia.enums.SurveyPersonalityQuestionsEnum;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import aws.smithy.kotlin.runtime.time.Clock;
 
 public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
 
@@ -61,6 +66,10 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
         titleQuestion.setText(question.getQuestionTitle());
         yesButton.setSelected(isSelectedButton(position, 1));
         noButton.setSelected(isSelectedButton(position, 0));
+
+        if (position == 11) {
+            calculatePersonality();
+        }
 
         if (yesButton.isSelected()) {
             yesButton.setTextColor(mContext.getApplicationContext().getResources().getColor(R.color.white_300));
@@ -121,7 +130,55 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
         }
     }
 
-    ;
+    private void calculatePersonality() {
+        SurveyPersonalityQuestionsEnum[] questions = SurveyPersonalityQuestionsEnum.values();
+        Map<Integer, Integer> idQuestions = new HashMap<Integer, Integer>();
+        int maxQ = answers.size();
+        ArrayList<Integer> results = new ArrayList<Integer>();
+        for (SurveyPersonalityQuestionsEnum quest : questions) {
+            idQuestions.put(quest.getIdQuestion(), quest.getQuestionType());
+        }
+        results.add(0, 0);
+        results.add(1, 0);
+        results.add(2, 0);
+        results.add(3, 0);
+        results.add(4, 0);
+        for (int i = 0; i < maxQ; i++) {
+            int typeQ = idQuestions.get(i);
+            switch (typeQ) {
+                case 0:
+                    int prevValue = results.get(0);
+                    results.add(0, prevValue + answers.get(i));
+                    break;
+                case 1:
+                    int prevValue1 = results.get(1);
+                    results.add(1, prevValue1 + answers.get(i));
+                    break;
+                case 2:
+                    int prevValue2 = results.get(2);
+                    results.add(2, prevValue2 + answers.get(i));
+                    break;
+                case 3:
+                    int prevValue3 = results.get(3);
+                    results.add(3, prevValue3 + answers.get(i));
+                    break;
+                case 4:
+                    int prevValue4 = results.get(4);
+                    results.add(4, prevValue4 + answers.get(i));
+                    break;
+            }
+        }
+        int personalityMaxValue = 0;
+        int personality = 0;
+        for (int j = 0; j < results.size(); j++) {
+            if (personalityMaxValue < results.get(j)) {
+                personalityMaxValue = results.get(j);
+                personality = j;
+            }
+        }
+        System.out.println("<------------ Tu personalidad es: --------------->");
+        System.out.println(PERSONALITIES[personality]);
+    }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {

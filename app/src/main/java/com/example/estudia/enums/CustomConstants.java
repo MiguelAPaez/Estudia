@@ -37,5 +37,6 @@ public class CustomConstants {
         public static final int SOCIAL = 3;
         public static final int EMPRENDEDOR = 4;
         public static final int CONVENCIONAL = 5;
+        public static final String[] PERSONALITIES = {"Realista", "Investigador", "Artista", "Social", "Emprendedor", "Convencional"};
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.IntroSurvey">
+
+    <LinearLayout
+        tools:ignore="MissingConstraints"
+        style="@style/LinearLayoutBase">
+
+        <ScrollView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/WightHeightBase">
+
+            <LinearLayout style="@style/LinearLayoutBase">
+
+                <LinearLayout style="@style/LinearLayoutTitlePage">
+
+                    <TextView
+                        style="@style/TitlePageTextView"
+                        android:text="@string/title_text_survey_page" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/LinearLayoutAlignItems">
+
+                    <TextView
+                        style="@style/SubtitleBoldTextView"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        android:text="@string/subtitle_text_survey_page" />
+
+                    <TextView
+                        style="@style/SubtitleBlackTextViewLayoutForm"
+                        android:text="@string/paragraph_one_text_survey_page" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

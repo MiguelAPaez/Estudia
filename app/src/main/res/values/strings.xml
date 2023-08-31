@@ -65,10 +65,17 @@
     <string name="study_question_1">¿Cuál es tu nivel de estudios?</string>
     <string name="motivation_question_1">¿Cuál es tu motivación para estudiar?</string>
     <string name="motivation_placeholder">Ingresa una palabra</string>
-    <string name="title_activity_customer_fragments">CustomerFragments</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
 
+    <!--Intro Personality Survey Screen-->
+    <string name="title_text_survey_page">Test</string>
+    <string name="subtitle_text_survey_page">¡Bienvenid@ al test de personalidad!</string>
+    <string name="paragraph_one_text_survey_page">
+        <br>Este test nos brindará la oportunidad de</br>
+        <br>conocer las principales características</br>
+        <br>de tu personalidad para determinar</br>
+        <br>las profesiones u ocupaciones que</br>
+        <br>¡mejor te sean compatibles!</br>
+    </string>
 
     <!--    Personality Survey Screen-->
     <string name="title_personality_survey_start">¡Vamos, Inicia!</string>
