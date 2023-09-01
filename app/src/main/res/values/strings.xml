@@ -70,12 +70,19 @@
     <string name="title_text_survey_page">Test</string>
     <string name="subtitle_text_survey_page">¡Bienvenid@ al test de personalidad!</string>
     <string name="paragraph_one_text_survey_page">
-        <br>Este test nos brindará la oportunidad de</br>
-        <br>conocer las principales características</br>
-        <br>de tu personalidad para determinar</br>
-        <br>las profesiones u ocupaciones que</br>
-        <br>¡mejor te sean compatibles!</br>
+        Este test nos brindará la oportunidad de conocer las principales características
+        de tu personalidad para determinar las <b>profesiones u ocupaciones</b> que
+        ¡mejor te sean compatibles!
     </string>
+    <string name="paragraph_two_text_survey_page">
+        <b>No te tomará más de 5 minutos</b> en contestarlo. Está compuesto por <b>60 preguntas</b> y
+        es basado en la prueba SDS - Búsqueda Autodirigida del psicologo Jhon Holland.
+    </string>
+    <string name="paragraph_three_text_survey_page">
+        Al finalizar el test, encontrarás las <b>personalidades que más sobresalen en ti,</b>
+        una explicación y las posibles profesiones a las cuáles te puedes dedicar a futuro.
+    </string>
+    <string name="button_survey_intro_page">Comenzar</string>
 
     <!--    Personality Survey Screen-->
     <string name="title_personality_survey_start">¡Vamos, Inicia!</string>

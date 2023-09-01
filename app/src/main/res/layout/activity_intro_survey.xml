@@ -36,7 +36,22 @@
 
                     <TextView
                         style="@style/SubtitleBlackTextViewLayoutForm"
+                        android:layout_marginTop="20dp"
                         android:text="@string/paragraph_one_text_survey_page" />
+
+                    <TextView
+                        style="@style/SubtitleBlackTextViewLayoutForm"
+                        android:text="@string/paragraph_two_text_survey_page" />
+
+                    <TextView
+                        style="@style/SubtitleBlackTextViewLayoutForm"
+                        android:text="@string/paragraph_three_text_survey_page" />
+
+                    <Button
+                        android:id="@+id/startSurveyButton"
+                        android:text="@string/button_survey_intro_page"
+                        android:layout_marginTop="50dp"
+                        style="@style/PrincipalButtonStyle" />
                 </LinearLayout>
 
             </LinearLayout>
