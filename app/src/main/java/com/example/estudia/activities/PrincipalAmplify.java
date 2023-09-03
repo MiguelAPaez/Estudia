@@ -1,4 +1,4 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import android.app.Application;
 import android.util.Log;

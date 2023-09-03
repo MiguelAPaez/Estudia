@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".PrincipalAmplify"
+        android:name=".activities.PrincipalAmplify"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,27 +19,28 @@
             android:label="@string/title_activity_customer_register_container"
             android:theme="@style/Theme.Estudia.NoActionBar" />
         <activity
-            android:name=".CustomerFragments"
-            android:exported="false"
-            android:label="@string/title_activity_customer_fragments"
-            android:theme="@style/Theme.Estudia.NoActionBar" />
-        <activity
-            android:name=".CustomerRegisterSlides"
+            android:name=".activities.IntroSurvey"
             android:exported="false" />
         <activity
-            android:name=".Confirm"
+            android:name=".activities.PersonalitySurvey"
             android:exported="false" />
         <activity
-            android:name=".WelcomeIntroSlides"
+            android:name=".activities.CustomerRegisterSlides"
             android:exported="false" />
         <activity
-            android:name=".BaseTemplate"
+            android:name=".activities.Confirm"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".activities.WelcomeIntroSlides"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".activities.BaseTemplate"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Register"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

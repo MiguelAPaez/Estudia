@@ -1,4 +1,4 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.estudia.R;
 import com.example.estudia.adapters.WelcomeIntroSlidesViewPagerAdapter;
 
 public class WelcomeIntroSlides extends AppCompatActivity {

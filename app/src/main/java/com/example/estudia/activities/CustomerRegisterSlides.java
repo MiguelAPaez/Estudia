@@ -1,4 +1,4 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.estudia.R;
 import com.example.estudia.adapters.CustomerRegisterSlidesViewPagerAdapter;
 import com.example.estudia.adapters.WelcomeIntroSlidesViewPagerAdapter;
 

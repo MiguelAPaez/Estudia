@@ -1,4 +1,4 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.estudia.R;
 import com.example.estudia.entities.BasicProfile;
 import com.example.estudia.entities.Profile;
 import com.example.estudia.facades.CognitoImplementation;

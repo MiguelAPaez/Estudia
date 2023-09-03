@@ -60,6 +60,14 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="LinearLayoutTitlePage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">170dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:background">@color/mustard_500</item>
+    </style>
+
     <!--    Text Views Styles-->
 
     <style name="TitleTextView">
@@ -84,6 +92,16 @@
         <item name="android:textAlignment">viewStart</item>
     </style>
 
+    <style name="TitlePageTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">70sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/grey_coal_500</item>
+        <item name="android:fontFamily">@font/times_new_roman</item>
+    </style>
+
     <style name="SubtitleBoldTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -101,6 +119,17 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/grey_500</item>
         <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="SubtitleBlackTextViewLayoutForm">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/asap_regular</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textColor">@color/grey_coal_500</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="SubtitleTangerineTextView">
@@ -122,6 +151,18 @@
         <item name="android:elevation">10dp</item>
         <item name="android:padding">10dp</item>
         <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="SurveyButtonStyle">
+        <item name="android:layout_width">199dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:background">@drawable/rounded_personality_survey_button</item>
+        <item name="android:textColor">@color/grey_100</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">left</item>
     </style>
 
     <!--    Text Input Edit Text-->

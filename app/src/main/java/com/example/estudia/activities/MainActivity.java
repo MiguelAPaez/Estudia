@@ -1,22 +1,23 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.NAME_USER;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.estudia.R;
 import com.example.estudia.facades.CognitoImplementation;
 import com.example.estudia.services.PreferencesEstudiaService;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLogout, btnRegister;
+    CardView btnLogout, btnRegister, btnSurvey;
     TextView eWelcomeMessage;
     CognitoImplementation cognitoImplementation;
     PreferencesEstudiaService preferencesEstudiaService;
@@ -30,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogout = (Button) findViewById(R.id.buttonLogOut);
-        btnRegister = (Button) findViewById(R.id.nextRegister);
+        btnLogout = (CardView) findViewById(R.id.buttonLogOut);
+        btnRegister = (CardView) findViewById(R.id.nextRegister);
+        btnSurvey = (CardView) findViewById(R.id.personalitySurveyButton);
         eWelcomeMessage = (TextView) findViewById(R.id.welcomeMessageMain);
 
         //Cognito Service
@@ -66,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CustomerRegisterContainer.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSurvey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PersonalitySurvey.class);
                 startActivity(intent);
             }
         });
