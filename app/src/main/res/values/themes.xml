@@ -165,6 +165,12 @@
         <item name="android:layout_gravity">left</item>
     </style>
 
+    <style name="CustomerRegisterButtonStyle" parent="SurveyButtonStyle">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:elevation">12dp</item>
+    </style>
+
     <!--    Text Input Edit Text-->
 
     <style name="TextInputEditStyle" parent="@style/WightHeightWrap">

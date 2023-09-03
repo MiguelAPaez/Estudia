@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Estudia"
         tools:targetApi="31">
         <activity
-            android:name=".CustomerRegisterContainer"
+            android:name=".activities.CustomerRegisterContainer"
             android:exported="false"
             android:label="@string/title_activity_customer_register_container"
             android:theme="@style/Theme.Estudia.NoActionBar" />

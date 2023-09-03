@@ -1,7 +1,8 @@
-package com.example.estudia;
+package com.example.estudia.activities;
 
 import android.os.Bundle;
 
+import com.example.estudia.R;
 import com.example.estudia.fragments.customer_register.EigthCustomerRegisterFragment;
 import com.example.estudia.fragments.customer_register.FifthCustomerRegisterFragment;
 import com.example.estudia.fragments.customer_register.FirstCustomerRegisterFragment;
