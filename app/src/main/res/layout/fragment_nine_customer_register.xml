@@ -28,7 +28,6 @@
 
         <LinearLayout
             android:id="@+id/linearLayoutNineCustomerRegister"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,9 +44,24 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextNineCustomerRegister"
                     android:hint="@string/motivation_placeholder"
+                    android:maxLength="12"
                     android:inputType="textCapWords"
                     style="@style/TextInputEditStyle" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/nextButtonNineCustomerRegister"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/next_mustard_rounded_button"
+            android:textSize="50sp"
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            android:gravity="center|center_vertical"
+            android:textColor="@color/white_400"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

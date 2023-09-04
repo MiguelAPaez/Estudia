@@ -26,14 +26,23 @@
             app:layout_constraintTop_toTopOf="parent"
             style="@style/TitleTextView" />
 
-        <Switch
-            android:id="@+id/switchFifthCustomerRegister"
+        <LinearLayout
+            style="@style/LinearLayoutHorizontalBase"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/questionTitleFifthCustomerRegister"
-            tools:ignore="UseSwitchCompatOrMaterialXml"
-            style="@style/SwitchCustomerRegisterStyle" />
+            app:layout_constraintTop_toBottomOf="@+id/questionTitleFifthCustomerRegister">
+
+            <Button
+                android:id="@+id/yesButtonFifthFragment"
+                style="@style/CustomerRegisterButtonStyle"
+                android:text="@string/button_survey_yes" />
+
+            <Button
+                android:id="@+id/noButtonFifthFragment"
+                style="@style/CustomerRegisterButtonStyle"
+                android:text="@string/button_survey_no" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

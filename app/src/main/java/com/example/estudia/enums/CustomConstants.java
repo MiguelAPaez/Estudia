@@ -15,19 +15,16 @@ public class CustomConstants {
         public static final String AGE_USER = "nickname";
         public static final String STRATUM_USER = "zoneinfo";
         public static final String GENDER_USER = "gender";
-        public static final String[] ARRAY_RACES = {"Pueblos y comunidades indígenas", "Comunidades negras o afrocolombianas", "Comunidad raizal", "Pueblo Rom o Gitano"};
-        public static final String[] ARRAY_DISABILITIES = {"Auditiva", "Física", "Intelectual", "Visual", "Sordoceguera", "Psicosocial", "Múltiple"};
-        public static final String[] ARRAY_WORKS = {"Carpintero", "Lechero", "Frutero", "Cerrajero", "Cocinero", "Deshollinador",
-                "Mecánico", "Artesano", "Pescador", "Escultor", "Tornero", "Albañil", "Editor", "Fontanero", "plomero",
-                "Obrero", "Panadero", "Carpintero", "Locutor", "Soldador", "Escritor", "Pintor", "Vendedor", "Sastre",
-                "Repartidor", "Cajero", "Policía", "Agricultor", "Vigilante", "Exterminador", "Carnicero", "Animador", "Peluquero",
-                "Abogado", "Médico", "cirujano", "Paleontólogo", "Ingeniero", "Historiador", "Geógrafo", "Biólogo", "Filólogo",
-                "Psicólogo", "Matemático", "Arquitecto", "Profesor", "Periodista", "Botánico", "Físico", "Sociólogo", "Químico",
-                "Politólogo", "Enfermero", "Electricista", "Bibliotecólogo", "Paramédico", "Músico", "Filósofo", "Secretaria", "Traductor",
-                "Antropólogo", "Técnico en turismo", "Economista", "Administrador", "Lingüista", "Radiólogo", "Contador", "Psicoanalista",
-                "Ecólogo"};
-        public static final String[] ARRAY_STUDY = {"Primaria", "Secundaria", "Técnica", "Profesional"};
-        public static final String[] ARRAY_EXPERIENCE = {"Amateur", "Intermedia", "Avanzada"};
+        public static final String[] CUSTOMER_REGISTER_QUESTIONS = {"race", "race_type", "disabilities", "disabilities_type", "work", "work_occupation", "work_experience", "study_experience", "motivation"};
+        public static final String[] ARRAY_RACES = {"Selecciona tu población", "Pueblos y comunidades indígenas", "Comunidades negras o afrocolombianas", "Comunidad raizal", "Pueblo Rom o Gitano"};
+        public static final String[] ARRAY_DISABILITIES = {"Selecciona tu discapacidad", "Auditiva", "Física", "Intelectual", "Visual", "Sordoceguera", "Psicosocial", "Múltiple"};
+        public static final String[] ARRAY_WORKS = {"Selecciona tu profesión", "abogado", "administrador", "agricultor", "albañil", "animador", "antropólogo", "arquitecto", "artesano", "bibliotecólogo", "biólogo",
+                "botánico", "cajero", "carnicero", "carpintero", "cerrajero", "cirujano", "cocinero", "contador", "deshollinador", "economista", "ecólogo", "editor", "electricista", "enfermero", "escritor", "escultor",
+                "exterminador", "filólogo", "filósofo", "fontanero", "frutero", "físico", "geógrafo", "historiador", "ingeniero", "lechero", "lingüista", "locutor", "matemático", "mecánico", "médico", "músico", "obrero",
+                "paleontólogo", "panadero", "paramédico", "peluquero", "periodista", "pescador", "pintor", "plomero", "policía", "politólogo", "profesor", "psicoanalista", "psicólogo", "químico",
+                "radiólogo", "repartidor", "sastre", "secretaria", "sociólogo", "soldador", "tornero", "traductor", "técnico en turismo", "vendedor", "vigilante"};
+        public static final String[] ARRAY_STUDY = {"Selecciona tu estudio completado", "Primaria", "Secundaria", "Técnica", "Profesional"};
+        public static final String[] ARRAY_EXPERIENCE = {"Selecciona tu experiencia", "Amateur", "Intermedia", "Avanzada"};
         public static final String SPINNER = "spinner";
         public static final String SWITCH = "switch";
         public static final String TEXT_EDIT = "text";

@@ -1,5 +1,6 @@
 package com.example.estudia.fragments.customer_register;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,8 +10,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.estudia.R;
+import com.example.estudia.interfaces.OnFragmentCustomerRegisterInteractionListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +21,9 @@ import com.example.estudia.R;
  * create an instance of this fragment.
  */
 public class FirstCustomerRegisterFragment extends Fragment {
+
+    private OnFragmentCustomerRegisterInteractionListener mListener;
+    Button yesButton, noButton;
 
     public FirstCustomerRegisterFragment() {
         // Required empty public constructor
@@ -33,5 +39,41 @@ public class FirstCustomerRegisterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        yesButton = view.findViewById(R.id.yesButtonFirstFragment);
+        noButton = view.findViewById(R.id.noButtonFirstFragment);
+
+        yesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                yesButton.setSelected(true);
+                noButton.setSelected(false);
+                notifyActivity(true);
+            }
+        });
+        noButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noButton.setSelected(true);
+                yesButton.setSelected(false);
+                notifyActivity(false);
+            }
+        });
+    }
+
+    private void notifyActivity(boolean answer) {
+        Bundle data = new Bundle();
+        data.putBoolean("answer", answer);
+        mListener.onFragmentEvent(this, data);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentCustomerRegisterInteractionListener) {
+            mListener = (OnFragmentCustomerRegisterInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " should implements OnFragmentCustomerRegisterInteractionListener");
+        }
     }
 }
