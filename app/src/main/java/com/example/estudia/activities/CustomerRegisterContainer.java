@@ -63,54 +63,31 @@ public class CustomerRegisterContainer extends AppCompatActivity implements OnFr
     @Override
     public void onFragmentEvent(Fragment fragment, Bundle data) {
         if (fragment instanceof FirstCustomerRegisterFragment) {
-            if (data.getBoolean("answer")) {
-                pagerAdapter.addFragment(new SecondCustomerRegisterFragment());
-                pagerAdapter.notifyDataSetChanged();
-            } else {
-                pagerAdapter.addFragment(new ThirdCustomerRegisterFragment());
-                pagerAdapter.notifyDataSetChanged();
-            }
-            saveAnswer(1, String.valueOf(data.getBoolean("answer")));
+            saveAnswer(0, String.valueOf(data.getBoolean("answer")));
+            addFragmentFromBoolean(data, new SecondCustomerRegisterFragment(), new ThirdCustomerRegisterFragment());
         } else if (fragment instanceof SecondCustomerRegisterFragment) {
-            saveAnswer(2, data.getString("answer"));
-            pagerAdapter.addFragment(new ThirdCustomerRegisterFragment());
-            pagerAdapter.notifyDataSetChanged();
+            saveAnswer(1, data.getString("answer"));
+            addFragmentInContainer(new ThirdCustomerRegisterFragment());
         } else if (fragment instanceof ThirdCustomerRegisterFragment) {
-            if (data.getBoolean("answer")) {
-                pagerAdapter.addFragment(new FourthCustomerRegisterFragment());
-                pagerAdapter.notifyDataSetChanged();
-            } else {
-                pagerAdapter.addFragment(new FifthCustomerRegisterFragment());
-                pagerAdapter.notifyDataSetChanged();
-            }
-            saveAnswer(3, String.valueOf(data.getBoolean("answer")));
+            saveAnswer(2, String.valueOf(data.getBoolean("answer")));
+            addFragmentFromBoolean(data, new FourthCustomerRegisterFragment(), new FifthCustomerRegisterFragment());
         } else if (fragment instanceof FourthCustomerRegisterFragment) {
-            saveAnswer(4, data.getString("answer"));
-            pagerAdapter.addFragment(new FifthCustomerRegisterFragment());
-            pagerAdapter.notifyDataSetChanged();
+            saveAnswer(3, data.getString("answer"));
+            addFragmentInContainer(new FifthCustomerRegisterFragment());
         } else if (fragment instanceof FifthCustomerRegisterFragment) {
-            if (data.getBoolean("answer")) {
-                pagerAdapter.addFragment(new SixCustomerRegisterFragment());
-                pagerAdapter.notifyDataSetChanged();
-            } else {
-                pagerAdapter.addFragment(new EigthCustomerRegisterFragment());
-                pagerAdapter.notifyDataSetChanged();
-            }
-            saveAnswer(5, String.valueOf(data.getBoolean("answer")));
+            saveAnswer(4, String.valueOf(data.getBoolean("answer")));
+            addFragmentFromBoolean(data, new SixCustomerRegisterFragment(), new EigthCustomerRegisterFragment());
         } else if (fragment instanceof SixCustomerRegisterFragment) {
-            saveAnswer(6, data.getString("answer"));
-            pagerAdapter.addFragment(new SevenCustomerRegisterFragment());
-            pagerAdapter.notifyDataSetChanged();
+            saveAnswer(5, data.getString("answer"));
+            addFragmentInContainer(new SevenCustomerRegisterFragment());
         } else if (fragment instanceof SevenCustomerRegisterFragment) {
-            saveAnswer(7, data.getString("answer"));
-            pagerAdapter.addFragment(new EigthCustomerRegisterFragment());
-            pagerAdapter.notifyDataSetChanged();
+            saveAnswer(6, data.getString("answer"));
+            addFragmentInContainer(new EigthCustomerRegisterFragment());
         } else if (fragment instanceof EigthCustomerRegisterFragment) {
-            saveAnswer(8, data.getString("answer"));
-            pagerAdapter.addFragment(new NineCustomerRegisterFragment());
-            pagerAdapter.notifyDataSetChanged();
+            saveAnswer(7, data.getString("answer"));
+            addFragmentInContainer(new NineCustomerRegisterFragment());
         } else if (fragment instanceof NineCustomerRegisterFragment) {
-            saveAnswer(9, data.getString("answer"));
+            saveAnswer(8, data.getString("answer"));
             saveInMemory();
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
@@ -141,8 +118,8 @@ public class CustomerRegisterContainer extends AppCompatActivity implements OnFr
 
     private void saveInMemory() {
         for (int i = 0; i < CUSTOMER_REGISTER_QUESTIONS.length; i++) {
-            if (answers.containsKey(i)) {
-                this.preferencesEstudiaService.writeAttribute(CUSTOMER_REGISTER_QUESTIONS[i], answers.get(i + 1));
+            if (answers.get(i) != null) {
+                this.preferencesEstudiaService.writeAttribute(CUSTOMER_REGISTER_QUESTIONS[i], answers.get(i));
             } else {
                 this.preferencesEstudiaService.writeAttribute(CUSTOMER_REGISTER_QUESTIONS[i], "not apply");
             }
@@ -151,5 +128,18 @@ public class CustomerRegisterContainer extends AppCompatActivity implements OnFr
             System.out.println("Entré a consultar los datos!!!");
             System.out.println(CUSTOMER_REGISTER_QUESTIONS[j] + ": " + this.preferencesEstudiaService.getAttribute(CUSTOMER_REGISTER_QUESTIONS[j]));
         }
+    }
+
+    private void addFragmentFromBoolean(Bundle data, Fragment redirectToIf, Fragment redirectToElse) {
+        if (data.getBoolean("answer")) {
+            addFragmentInContainer(redirectToIf);
+        } else {
+            addFragmentInContainer(redirectToElse);
+        }
+    }
+
+    private void addFragmentInContainer(Fragment fragment) {
+        pagerAdapter.addFragment(fragment);
+        pagerAdapter.notifyDataSetChanged();
     }
 }
