@@ -82,7 +82,7 @@
         Al finalizar el test, encontrarás las <b>personalidades que más sobresalen en ti,</b>
         una explicación y las posibles profesiones a las cuáles te puedes dedicar a futuro.
     </string>
-    <string name="button_survey_intro_page">Comenzar</string>
+    <string name="button_survey_intro_page">Iniciar</string>
 
     <!--    Personality Survey Screen-->
     <string name="title_personality_survey_start">¡Vamos, Inicia!</string>
