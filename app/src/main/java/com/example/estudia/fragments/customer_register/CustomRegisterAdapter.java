@@ -20,6 +20,10 @@ public class CustomRegisterAdapter extends FragmentPagerAdapter {
         fragments.add(fragment);
     }
 
+    public List<Fragment> getFragments() {
+        return fragments;
+    }
+
     @NonNull
     @Override
     public Fragment getItem(int position) {

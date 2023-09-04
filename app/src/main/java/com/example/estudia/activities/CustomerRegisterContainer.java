@@ -27,6 +27,7 @@ import com.example.estudia.databinding.ActivityCustomerRegisterContainerBinding;
 import com.example.estudia.services.PreferencesEstudiaService;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CustomerRegisterContainer extends AppCompatActivity implements OnFragmentCustomerRegisterInteractionListener {
@@ -139,7 +140,10 @@ public class CustomerRegisterContainer extends AppCompatActivity implements OnFr
     }
 
     private void addFragmentInContainer(Fragment fragment) {
-        pagerAdapter.addFragment(fragment);
-        pagerAdapter.notifyDataSetChanged();
+        List<Fragment> fragments = pagerAdapter.getFragments();
+        if (!fragments.contains(fragment)) {
+            pagerAdapter.addFragment(fragment);
+            pagerAdapter.notifyDataSetChanged();
+        }
     }
 }
