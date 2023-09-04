@@ -1,6 +1,7 @@
 package com.example.estudia.adapters;
 
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITIES;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITY_1;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,9 +17,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.estudia.R;
 import com.example.estudia.enums.SurveyPersonalityQuestionsEnum;
+import com.example.estudia.services.PreferencesEstudiaService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import aws.smithy.kotlin.runtime.time.Clock;
@@ -27,9 +30,11 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
 
     Context mContext;
     private Map<Integer, Integer> answers = new HashMap<Integer, Integer>();
+    PreferencesEstudiaService preferencesEstudiaService;
 
     public PersonalitySurveyViewPagerAdapter(Context mContext) {
         this.mContext = mContext;
+        this.preferencesEstudiaService = new PreferencesEstudiaService(this.mContext);
     }
 
     public interface OnButtonClickListener {
@@ -178,6 +183,7 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
         }
         System.out.println("<------------ Tu personalidad es: --------------->");
         System.out.println(PERSONALITIES[personality]);
+        this.preferencesEstudiaService.writeAttribute(PERSONALITY_1, PERSONALITIES[personality]);
     }
 
     @Override

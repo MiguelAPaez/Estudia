@@ -125,7 +125,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/asap_regular</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:layout_marginTop">15dp</item>
         <item name="android:textColor">@color/grey_coal_500</item>

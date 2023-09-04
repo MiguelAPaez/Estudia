@@ -76,7 +76,7 @@
     </string>
     <string name="paragraph_two_text_survey_page">
         <b>No te tomará más de 5 minutos</b> en contestarlo. Está compuesto por <b>60 preguntas</b> y
-        es basado en la prueba SDS - Búsqueda Autodirigida del psicologo Jhon Holland.
+        está basado en la prueba SDS - Búsqueda Autodirigida del psicologo John Holland.
     </string>
     <string name="paragraph_three_text_survey_page">
         Al finalizar el test, encontrarás las <b>personalidades que más sobresalen en ti,</b>
@@ -149,5 +149,20 @@
     <string name="personality_question_58">¿Te gusta realizar acciones de archivo?</string>
     <string name="personality_question_59">¿Puedes realizar registros contables, débitos y créditos?</string>
     <string name="personality_question_60">¿Puedes realizar registros de pagos o ventas?</string>
+
+    <!--Personality Screen-->
+    <string name="title_congrats_personality">¡Tu Personalidad es!</string>
+    <string name="artista_description">Más conocidos como <b>“creadores”</b>. Son todas las personas artistas, caracterizadas por su creatividad y sentimentalismo.
+        Les gusta dedicarse a lo que hacen sin sentir privación, incluso de un horario. <b>¡Ponen sus propios límites!</b></string>
+    <string name="convencional_description">Más conocidos como <b>“organizadores”</b>. Atentos a los detalles en cualquier lugar y muy organizadas.
+        Les gusta el análisis, la investigación y las finanzas, entre otros aspectos, como la programación. <b>¡Suelen tener conclusiones certeras!</b></string>
+    <string name="emprendedor_description">Mejor conocidos como <b>“persuasivos”</b>. Son personas con capacidad para influenciar a otros y persuadirlos.
+        Trabajan muy bien en equipo y pueden llegar a ser demasiado competitivos. <b>¡Son los mejores en los negocios!</b></string>
+    <string name="investigador_description">Mejor conocidos como <b>“pensadores”</b>. Les apasiona la lógica y lo científico.
+        Con amplia capacidad para analizar, evaluar y entender problemas. Les gusta aprender, en especial, <b> entender por qué suceden los hechos</b></string>
+    <string name="realista_description">Conocidos como los <b>“hacedores”</b>. Les gusta realizar el trabajo siempre con sus propias manos;
+        son aquellos dedicados a manejar maquinaria, utilizando herramientas o cualquier trabajo manual. <b>¡Sus habilidades están relacionadas con la mecánica!</b></string>
+    <string name="social_description">Son los <b>“ayudadores”</b>. Son los mejores en relacionarse con otros, son los mejores docentes y personas
+        dedicadas al cuidado dentro de nuestras sociedades. <b>¡Son buenos comunicando, saben enseñar y ayudar!</b></string>
 
 </resources>

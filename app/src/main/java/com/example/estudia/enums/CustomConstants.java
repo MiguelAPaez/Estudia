@@ -15,6 +15,7 @@ public class CustomConstants {
         public static final String AGE_USER = "nickname";
         public static final String STRATUM_USER = "zoneinfo";
         public static final String GENDER_USER = "gender";
+        public static final String PERSONALITY_1 = "personality_1";
         public static final String[] ARRAY_RACES = {"Pueblos y comunidades indígenas", "Comunidades negras o afrocolombianas", "Comunidad raizal", "Pueblo Rom o Gitano"};
         public static final String[] ARRAY_DISABILITIES = {"Auditiva", "Física", "Intelectual", "Visual", "Sordoceguera", "Psicosocial", "Múltiple"};
         public static final String[] ARRAY_WORKS = {"Carpintero", "Lechero", "Frutero", "Cerrajero", "Cocinero", "Deshollinador",

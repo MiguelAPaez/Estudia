@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         btnSurvey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PersonalitySurvey.class);
+                Intent intent = new Intent(getApplicationContext(), IntroSurvey.class);
                 startActivity(intent);
             }
         });

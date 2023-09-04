@@ -13,6 +13,7 @@ import com.example.estudia.enums.SurveyPersonalityQuestionsEnum;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PersonalitySurvey extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class PersonalitySurvey extends AppCompatActivity {
     ProgressBar progressBar;
     ViewPager mSlideViewPager;
     int currentProgress = 0;
+    private List<String> personalities = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,11 @@ public class PersonalitySurvey extends AppCompatActivity {
             @Override
             public void OnButtonClick() {
                 if (getItem(0) < 60) {
+                    if (getItem(0) == 10) {
+                        Intent i = new Intent(getApplicationContext(), Personality.class);
+                        startActivity(i);
+                        finish();
+                    }
                     int newPosition = mSlideViewPager.getCurrentItem() + 1;
                     mSlideViewPager.setCurrentItem(newPosition, false);
                     progressBar.setProgress(newPosition);
