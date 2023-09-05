@@ -165,4 +165,10 @@
     <string name="social_description">Son los <b>“ayudadores”</b>. Son los mejores en relacionarse con otros, son los mejores docentes y personas
         dedicadas al cuidado dentro de nuestras sociedades. <b>¡Son buenos comunicando, saben enseñar y ayudar!</b></string>
 
+    <!--Study Programs Screen-->
+    <string name="study_programs_screen_title">¿Qué podrías estudiar?</string>
+    <string name="study_programs_screen_second_title">Programas Sena</string>
+    <string name="study_programs_first_subtitle">Programas más apropiados para ti</string>
+    <string name="study_programs_second_subtitle">Otros programas para ti</string>
+
 </resources>

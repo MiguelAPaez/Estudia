@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="140dp"
+        android:elevation="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:background="@drawable/horizontal_programs_bg"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageIdHorizontalProgram"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/android"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameIdHorizontalProgram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="Nombre" />
+
+            <TextView
+                android:id="@+id/infoIdHorizontalProgram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:text="Descripción" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
