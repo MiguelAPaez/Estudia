@@ -165,6 +165,12 @@
         <item name="android:layout_gravity">left</item>
     </style>
 
+    <style name="CustomerRegisterButtonStyle" parent="SurveyButtonStyle">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:elevation">12dp</item>
+    </style>
+
     <!--    Text Input Edit Text-->
 
     <style name="TextInputEditStyle" parent="@style/WightHeightWrap">
@@ -197,6 +203,31 @@
     <style name="Theme.Estudia.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SwitchCustomerRegisterStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:switchMinWidth">50dp</item>
+        <item name="android:textOn">Si</item>
+        <item name="android:textOff">No</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:showText">true</item>
+        <item name="android:textColor">@color/grey_coal_500</item>
+        <item name="android:thumbTextPadding">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:thumb">@drawable/baseline_brightness_1_50</item>
+        <item name="android:track">@drawable/track_selector</item>
+    </style>
+
+    <style name="SpinnerCustomerRegisterStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:textColor">@color/grey_coal_400</item>
+        <item name="android:backgroundTint">@color/grey_coal_400</item>
     </style>
 
     <style name="Theme.Estudia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
