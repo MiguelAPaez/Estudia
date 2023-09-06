@@ -20,7 +20,7 @@ public class PersonalitySurvey extends AppCompatActivity {
 
     ProgressBar progressBar;
     ViewPager mSlideViewPager;
-    int currentProgress = 0;
+    int lengthQuestions = SurveyPersonalityQuestionsEnum.values().length;
     private List<String> personalities = new ArrayList<>();
 
     @Override
@@ -40,17 +40,12 @@ public class PersonalitySurvey extends AppCompatActivity {
         personalitySurvey.setButtonClickListener(new PersonalitySurveyViewPagerAdapter.OnButtonClickListener() {
             @Override
             public void OnButtonClick() {
-                if (getItem(0) < 60) {
-                    if (getItem(0) == 10) {
-                        Intent i = new Intent(getApplicationContext(), Personality.class);
-                        startActivity(i);
-                        finish();
-                    }
+                if (getItem(1) < lengthQuestions) {
                     int newPosition = mSlideViewPager.getCurrentItem() + 1;
                     mSlideViewPager.setCurrentItem(newPosition, false);
                     progressBar.setProgress(newPosition);
                 } else {
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(), Personality.class);
                     startActivity(i);
                     finish();
                 }
