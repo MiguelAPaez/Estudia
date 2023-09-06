@@ -19,6 +19,9 @@
             android:label="@string/title_activity_customer_register_container"
             android:theme="@style/Theme.Estudia.NoActionBar" />
         <activity
+            android:name=".activities.StudyPrograms"
+            android:exported="false" />
+        <activity
             android:name=".activities.IntroSurvey"
             android:exported="false" />
         <activity

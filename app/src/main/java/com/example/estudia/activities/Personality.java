@@ -57,7 +57,7 @@ public class Personality extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Activar Vista de programas
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                Intent i = new Intent(getApplicationContext(), StudyPrograms.class);
                 startActivity(i);
                 finish();
             }
