@@ -68,6 +68,12 @@
         <item name="android:background">@color/mustard_500</item>
     </style>
 
+    <style name="LinearLayoutHorizontalMatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
     <!--    Text Views Styles-->
 
     <style name="TitleTextView">
@@ -189,6 +195,20 @@
         <item name="android:layout_gravity">left</item>
     </style>
 
+    <style name="MustardButtonStyle">
+        <item name="android:layout_width">199dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:background">@drawable/button_survey_active</item>
+        <item name="android:textColor">@color/white_500</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginEnd">45dp</item>
+    </style>
+
     <style name="CustomerRegisterButtonStyle" parent="SurveyButtonStyle">
         <item name="android:layout_margin">10dp</item>
         <item name="android:layout_weight">1</item>
@@ -257,4 +277,69 @@
     <style name="Theme.Estudia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Estudia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Card View Styles-->
+
+    <style name="GridLayoutCardViewMain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:rowCount">6</item>
+        <item name="android:columnCount">1</item>
+        <item name="android:layout_marginStart">45dp</item>
+        <item name="android:layout_marginEnd">45dp</item>
+    </style>
+
+    <style name="CardViewMain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">125dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="TitleTextCardViewMain">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:fontFamily">@font/asap_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/grey_coal_300</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="ImageCardViewMain">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="GridLayoutCardViewPersonalities">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:rowCount">4</item>
+        <item name="android:columnCount">1</item>
+    </style>
+
+    <style name="CardViewPersonalities">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="TitleTextCardViewPersonality">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:fontFamily">@font/helvetica_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/grey_coal_300</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>

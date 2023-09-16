@@ -54,6 +54,13 @@
     <string name="subtitle_page_3">Queremos que encuentres la carrera que desees, acorde a tus preferencias</string>
     <string name="subtitle_page_4">No seríamos nada sin nuestros peludos, ellos hacen parte de Estudia y de ti</string>
 
+    <!--Main Page Screen-->
+    <string name="next_register_title">Continuar registro</string>
+    <string name="personality_survey_title">Test de Personalidad</string>
+    <string name="programs_title">Programas Educativos</string>
+    <string name="profile_tile">Perfil</string>
+    <string name="logout_title">Salir</string>
+
     <!--    Customer Register Screen-->
     <string name="race_question_1">¿Perteneces a algún grupo étnico o raizal?</string>
     <string name="race_question_2">¿A cuál grupo étnico perteneces?</string>
@@ -156,6 +163,12 @@
     <string name="personality_question_59">¿Puedes realizar registros contables, débitos y créditos?</string>
     <string name="personality_question_60">¿Puedes realizar registros de pagos o ventas?</string>
 
+    <!--Intro Personalities Screen-->
+    <string name="intro_personality_title">Tus personalidades</string>
+    <string name="intro_personality_description">Aquí encontrarás en orden de relevancia las personalidades que más sobresalen en ti según el test de personalidades del psicólogo John Holland que realizaste.</string>
+    <string name="intro_personality_description_2"><b><i>¡Haz click en cada una de ellas y conoce más información!</i></b></string>
+    <string name="intro_personality_button">Programas Educativos ></string>
+
     <!--Personality Screen-->
     <string name="title_congrats_personality">¡Tu Personalidad es!</string>
     <string name="artista_description">Más conocidos como <b>“creadores”</b>. Son todas las personas artistas, caracterizadas por su creatividad y sentimentalismo.
@@ -173,7 +186,7 @@
 
     <!--Study Programs Screen-->
     <string name="study_programs_screen_title">¿Qué podrías estudiar?</string>
-    <string name="study_programs_screen_second_title">Programas Sena</string>
+    <string name="study_programs_screen_second_title">Programas Educativos</string>
     <string name="study_programs_first_subtitle">Programas más apropiados para ti</string>
     <string name="study_programs_second_subtitle">Otros programas para ti</string>
 
