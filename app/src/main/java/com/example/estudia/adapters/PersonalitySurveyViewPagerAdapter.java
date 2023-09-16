@@ -2,6 +2,8 @@ package com.example.estudia.adapters;
 
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITIES;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITY_1;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITY_2;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITY_3;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -23,6 +25,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.LinkedHashMap;
 
 import aws.smithy.kotlin.runtime.time.Clock;
 
@@ -134,7 +138,7 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
         SurveyPersonalityQuestionsEnum[] questions = SurveyPersonalityQuestionsEnum.values();
         Map<Integer, Integer> idQuestions = new HashMap<Integer, Integer>();
         int maxQ = answers.size();
-        Map<Integer, Integer> results = new HashMap<Integer, Integer>();
+        final Map<Integer, Integer> results = new HashMap<Integer, Integer>();
         for (SurveyPersonalityQuestionsEnum quest : questions) {
             idQuestions.put(quest.getIdQuestion(), quest.getQuestionType());
         }
@@ -143,6 +147,7 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
         results.put(2, 0);
         results.put(3, 0);
         results.put(4, 0);
+        results.put(5, 0);
         for (int i = 0; i < maxQ; i++) {
             int typeQ = idQuestions.get(i);
             switch (typeQ) {
@@ -166,21 +171,38 @@ public class PersonalitySurveyViewPagerAdapter extends PagerAdapter {
                     int prevValue4 = results.get(4);
                     results.put(4, prevValue4 + answers.get(i));
                     break;
+                case 5:
+                    int prevValue5 = results.get(5);
+                    results.put(5, prevValue5 + answers.get(i));
+                    break;
             }
         }
         System.out.println("RESULTSSSS!!");
         System.out.println(results);
-        int personalityMaxValue = 0;
-        int personality = 0;
-        for (int j = 0; j < results.size(); j++) {
-            if (personalityMaxValue < results.get(j)) {
-                personalityMaxValue = results.get(j);
-                personality = j;
-            }
-        }
-        System.out.println("<------------ Tu personalidad es: --------------->");
-        System.out.println(PERSONALITIES[personality]);
-        this.preferencesEstudiaService.writeAttribute(PERSONALITY_1, PERSONALITIES[personality]);
+
+        final Map<Integer, Integer> sortedResults = new LinkedHashMap<>();
+
+        results.entrySet()
+                .stream()
+                .sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
+                .forEachOrdered(entry -> sortedResults.put(entry.getKey(), entry.getValue()));
+
+        System.out.println("RESULT ORDERED: ");
+        System.out.println(sortedResults);
+
+        Object[] personalities = sortedResults.keySet().toArray();
+
+        System.out.println("MAP KEYS:");
+        System.out.println(sortedResults.keySet());
+
+        System.out.println("<------------ Tus personalidades son: --------------->");
+        System.out.println("1: " + PERSONALITIES[Integer.parseInt(personalities[0].toString())]);
+        System.out.println("2: " + PERSONALITIES[Integer.parseInt(personalities[1].toString())]);
+        System.out.println("3: " + PERSONALITIES[Integer.parseInt(personalities[2].toString())]);
+
+        this.preferencesEstudiaService.writeAttribute(PERSONALITY_1, PERSONALITIES[Integer.parseInt(personalities[0].toString())]);
+        this.preferencesEstudiaService.writeAttribute(PERSONALITY_2, PERSONALITIES[Integer.parseInt(personalities[1].toString())]);
+        this.preferencesEstudiaService.writeAttribute(PERSONALITY_3, PERSONALITIES[Integer.parseInt(personalities[2].toString())]);
     }
 
     @Override

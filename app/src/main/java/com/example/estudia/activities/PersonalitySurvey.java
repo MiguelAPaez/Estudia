@@ -45,7 +45,7 @@ public class PersonalitySurvey extends AppCompatActivity {
                     mSlideViewPager.setCurrentItem(newPosition, false);
                     progressBar.setProgress(newPosition);
                 } else {
-                    Intent i = new Intent(getApplicationContext(), Personality.class);
+                    Intent i = new Intent(getApplicationContext(), IntroPersonalities.class);
                     startActivity(i);
                     finish();
                 }

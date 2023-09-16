@@ -319,6 +319,7 @@
     <style name="GridLayoutCardViewPersonalities">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginBottom">200dp</item>
         <item name="android:rowCount">4</item>
         <item name="android:columnCount">1</item>
     </style>

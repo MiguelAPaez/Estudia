@@ -22,22 +22,11 @@
 
             <LinearLayout style="@style/LinearLayoutAlignItems">
 
-                <TextView
-                    android:id="@+id/personalityTitle"
-                    style="@style/TitleTextView"
-                    android:text="@string/title_congrats_personality"
-                    android:textAlignment="center"
-                    android:textColor="@color/white_500"
-                    app:layout_constraintBaseline_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <ImageView
                     android:id="@+id/personalityImage"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="50dp"
                     android:src="@drawable/artista" />
 
                 <TextView

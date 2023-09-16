@@ -18,8 +18,6 @@ import com.example.estudia.enums.PersonalityEnum;
 import com.example.estudia.services.PreferencesEstudiaService;
 
 public class Personality extends AppCompatActivity {
-
-    PreferencesEstudiaService preferencesEstudiaService;
     PersonalityEnum personalityEnum;
     PersonalityEnum[] personalities = PersonalityEnum.values();
     ImageView image;
@@ -31,12 +29,18 @@ public class Personality extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personality);
 
+        ConstraintLayout constraintLayout = findViewById(R.id.personalityLayout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
         image = (ImageView) findViewById(R.id.personalityImage);
         description = (TextView) findViewById(R.id.personalityDescription);
         btnPersonality = (Button) findViewById(R.id.nextButtonPersonality);
 
-        this.preferencesEstudiaService = new PreferencesEstudiaService(this);
-        String personality = this.preferencesEstudiaService.getAttribute(PERSONALITY_1);
+        Intent intent = getIntent();
+        String personality = intent.getStringExtra("personality");
 
         for (int i = 0; i < personalities.length; i++) {
             if (personalities[i].getPersonality().equals(personality)) {
@@ -46,12 +50,6 @@ public class Personality extends AppCompatActivity {
 
         image.setImageResource(personalityEnum.getImageId());
         description.setText(personalityEnum.getDescriptionId());
-
-        ConstraintLayout constraintLayout = findViewById(R.id.personalityLayout);
-        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2500);
-        animationDrawable.setExitFadeDuration(5000);
-        animationDrawable.start();
 
         btnPersonality.setOnClickListener(new View.OnClickListener() {
             @Override
