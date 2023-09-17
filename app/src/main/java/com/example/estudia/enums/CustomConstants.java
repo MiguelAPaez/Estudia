@@ -17,6 +17,7 @@ public class CustomConstants {
         public static final String GENDER_USER = "gender";
         public static final String PERSONALITY_1 = "personality_1";
         public static final String[] CUSTOMER_REGISTER_QUESTIONS = {"race", "race_type", "disabilities", "disabilities_type", "work", "work_occupation", "work_experience", "study_experience", "motivation"};
+        public static final String[] CUSTOMER_REGISTER_PREFERENCES = {"program_type", "study_area", "program_modality", "mobility", "study_city", "time_availability"};
         public static final String[] ARRAY_RACES = {"Selecciona tu población", "Pueblos y comunidades indígenas", "Comunidades negras o afrocolombianas", "Comunidad raizal", "Pueblo Rom o Gitano"};
         public static final String[] ARRAY_DISABILITIES = {"Selecciona tu discapacidad", "Auditiva", "Física", "Intelectual", "Visual", "Sordoceguera", "Psicosocial", "Múltiple"};
         public static final String[] ARRAY_WORKS = {"Selecciona tu profesión", "abogado", "administrador", "agricultor", "albañil", "animador", "antropólogo", "arquitecto", "artesano", "bibliotecólogo", "biólogo",
@@ -26,6 +27,15 @@ public class CustomConstants {
                 "radiólogo", "repartidor", "sastre", "secretaria", "sociólogo", "soldador", "tornero", "traductor", "técnico en turismo", "vendedor", "vigilante"};
         public static final String[] ARRAY_STUDY = {"Selecciona tu estudio completado", "Primaria", "Secundaria", "Técnica", "Profesional"};
         public static final String[] ARRAY_EXPERIENCE = {"Selecciona tu experiencia", "Amateur", "Intermedia", "Avanzada"};
+        public static final String[] ARRAY_PROGRAM_TYPE = {"Selecciona el tipo de programa", "Técnico", "Tecnólogo"};
+        public static final String[] ARRAY_PROGRAM_MODALITY = {"Selecciona la modalidad de estudio", "Presencial", "Virtual", "A distancia"};
+        public static final String[] ARRAY_STUDY_AREAS = {"Selecciona tú área de estudio preferida", "Actividad física, recreación y deporte", "Acuícola y pesca", "Aeroespacial", "Agrícola", "Ambiental", "Artes gráficas",
+                "Artesanías", "Automotor", "Biotecnología", "Comercio y ventas", "Construcción", "Cuero, calzado y marroquinería", "Cultura", "Electrónica y automatización", "Energía eléctrica", "Gestión administrativa y financiera",
+                "Hidrocarburos", "Hotelería y turismo", "Informática, diseño y desarrollo de software", "Infraestructura", "Logística, gestión de la producción", "Materiales para la industria", "Mecánica industrial", "Minería",
+                "Pecuaria", "Química aplicada", "Salud", "Servicios personales", "Telecomunicaciones", "Textil, confección, diseño y moda", "Transporte"};
+        public static final String[] ARRAY_CITIES = {"Selecciona tu ciudad preferida", "Bogotá", "Cali", "Fusagasugá", "Medellín"};
+        public static final String[] ARRAY_TIME_AVAILABILITY = {"Selecciona tu disponibilidad horaria", "Jornada Diurna (6:00 a.m., a 6:00 p.m.)", "Jornada Nocturna (6:00 p.m., a 10:00 p.m.)",
+                "Jornada Madrugada (10:00 p.m., a 6:00 a.m.)", "Jornada Mixta (6:00 a.m., a 10:00 p.m.)"};
         public static final String SPINNER = "spinner";
         public static final String SWITCH = "switch";
         public static final String TEXT_EDIT = "text";

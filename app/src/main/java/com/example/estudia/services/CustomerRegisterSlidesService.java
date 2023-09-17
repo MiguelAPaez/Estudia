@@ -1,9 +1,14 @@
 package com.example.estudia.services;
 
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_CITIES;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_DISABILITIES;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_EXPERIENCE;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_PROGRAM_MODALITY;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_PROGRAM_TYPE;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_RACES;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_STUDY;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_STUDY_AREAS;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_TIME_AVAILABILITY;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_WORKS;
 
 import com.example.estudia.R;
@@ -30,6 +35,16 @@ public class CustomerRegisterSlidesService {
                 return ARRAY_EXPERIENCE;
             case 4:
                 return ARRAY_STUDY;
+            case 5:
+                return ARRAY_PROGRAM_TYPE;
+            case 6:
+                return ARRAY_PROGRAM_MODALITY;
+            case 7:
+                return ARRAY_STUDY_AREAS;
+            case 8:
+                return ARRAY_CITIES;
+            case 9:
+                return ARRAY_TIME_AVAILABILITY;
             default:
                 return ARRAY_WORKS;
         }
@@ -71,6 +86,23 @@ public class CustomerRegisterSlidesService {
             default:
                 return getQuestion(question);
         }
+    }
+
+    public String timeAvailabilityMapper(String entry) {
+        String response = "";
+        switch (entry) {
+            case "Jornada Diurna (6:00 a.m., a 6:00 p.m.)":
+                response = "Diurna";
+            case "Jornada Nocturna (6:00 p.m., a 10:00 p.m.)":
+                response = "Nocturna";
+            case "Jornada Madrugada (10:00 p.m., a 6:00 a.m.)":
+                response = "Madrugada";
+            case "Jornada Mixta (6:00 a.m., a 10:00 p.m.)":
+                response = "Mixta";
+            default:
+                response = "Sin definir";
+        }
+        return response;
     }
 
 }
