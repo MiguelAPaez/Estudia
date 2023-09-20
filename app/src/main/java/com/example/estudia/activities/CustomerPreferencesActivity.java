@@ -81,7 +81,7 @@ public class CustomerPreferencesActivity extends AppCompatActivity implements On
             saveInMemory();
             // Go to Choose principal preferences
             // addFragmentInContainer(new TimeAvailabilityCustomerRegisterFragment());
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            Intent i = new Intent(getApplicationContext(), SelectPreferencesActivity.class);
             startActivity(i);
             finish();
         }
@@ -90,7 +90,7 @@ public class CustomerPreferencesActivity extends AppCompatActivity implements On
             int newPosition = mSlideViewPager.getCurrentItem() + 1;
             mSlideViewPager.setCurrentItem(newPosition, false);
         } else {
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            Intent i = new Intent(getApplicationContext(), SelectPreferencesActivity.class);
             startActivity(i);
             finish();
         }
