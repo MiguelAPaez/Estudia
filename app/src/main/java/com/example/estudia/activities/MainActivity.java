@@ -17,7 +17,7 @@ import com.example.estudia.services.PreferencesEstudiaService;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView btnLogout, btnRegister, btnSurvey;
+    CardView btnLogout, btnRegister, btnSurvey, btnProfile;
     TextView eWelcomeMessage;
     CognitoImplementation cognitoImplementation;
     PreferencesEstudiaService preferencesEstudiaService;
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogout = (CardView) findViewById(R.id.buttonLogOut);
         btnRegister = (CardView) findViewById(R.id.nextRegister);
         btnSurvey = (CardView) findViewById(R.id.personalitySurveyButton);
+        btnProfile = (CardView) findViewById(R.id.profileButton);
         eWelcomeMessage = (TextView) findViewById(R.id.welcomeMessageMain);
 
         //Cognito Service
@@ -76,6 +77,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), IntroSurvey.class);
+                startActivity(intent);
+            }
+        });
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SelectPreferencesActivity.class);
                 startActivity(intent);
             }
         });

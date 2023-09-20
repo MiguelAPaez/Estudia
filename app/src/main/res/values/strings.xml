@@ -78,6 +78,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--Customer Preferences Screen-->
+    <string name="title_custom_preferences_page">Preferencias de estudio</string>
+    <string name="description_custom_preferences_page">En esta pantalla encontrarás las
+        preferencias de estudio que puedes tener en cuenta cuando empieces a estudiar.</string>
+    <string name="description_two_custom_preferences_page"><b>¡Ordena la lista!</b> Para ello arrastra y suelta
+        los <i>items</i> de la lista acorde al orden que le darías de lo más importante a lo menos importante
+        que tendrías en cuenta.</string>
+    <string name="description_three_custom_preferences_page">Cuando finalices de organizarlos da click en
+        el botón "siguiente" de la parte inferior.</string>
+    <string name="title_preferences_list">Listado de preferencias</string>
+    <string name="subtitle_more_important">Más importante</string>
+    <string name="subtitle_less_important">Menos importante</string>
+
     <!--Intro Personality Survey Screen-->
     <string name="title_text_survey_page">Test</string>
     <string name="subtitle_text_survey_page">¡Bienvenid@ al test de personalidad!</string>

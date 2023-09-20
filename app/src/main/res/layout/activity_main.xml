@@ -140,6 +140,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
+                    android:id="@+id/profileButton"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="12dp"
                     android:layout_margin="5dp"

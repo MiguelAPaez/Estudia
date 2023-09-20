@@ -33,6 +33,8 @@ public class CustomConstants {
                 "Artesanías", "Automotor", "Biotecnología", "Comercio y ventas", "Construcción", "Cuero, calzado y marroquinería", "Cultura", "Electrónica y automatización", "Energía eléctrica", "Gestión administrativa y financiera",
                 "Hidrocarburos", "Hotelería y turismo", "Informática, diseño y desarrollo de software", "Infraestructura", "Logística, gestión de la producción", "Materiales para la industria", "Mecánica industrial", "Minería",
                 "Pecuaria", "Química aplicada", "Salud", "Servicios personales", "Telecomunicaciones", "Textil, confección, diseño y moda", "Transporte"};
+        public static final String[] ARRAY_PREFERENCES = {"Tipo de Programa a estudiar", "Área de Conocimiento", "Modalidad de estudio", "Movilidad", "Disponibilidad horaria"};
+        public static final String[] ARRAY_DESC_PREFERENCES = {"Por ejemplo, programa técnico o tecnólogo", "Profesión u ocupación a ejercer", "Virtual, presencial, a distancia", "Deseas desplazarte a otra ciudad", "Priorizas el horario en qué puedes tomar clase"};
         public static final String[] ARRAY_CITIES = {"Selecciona tu ciudad preferida", "Bogotá", "Cali", "Fusagasugá", "Medellín"};
         public static final String[] ARRAY_TIME_AVAILABILITY = {"Selecciona tu disponibilidad horaria", "Jornada Diurna (6:00 a.m., a 6:00 p.m.)", "Jornada Nocturna (6:00 p.m., a 10:00 p.m.)",
                 "Jornada Madrugada (10:00 p.m., a 6:00 a.m.)", "Jornada Mixta (6:00 a.m., a 10:00 p.m.)"};

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SelectPreferencesActivity">
+
+    <ScrollView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/WightHeightBase">
+
+        <LinearLayout style="@style/LinearLayoutBase">
+
+            <LinearLayout
+                android:layout_height="120dp"
+                style="@style/LinearLayoutTitlePage">
+
+                <TextView
+                    style="@style/TitlePageTextView"
+                    android:textSize="30sp"
+                    android:text="@string/title_custom_preferences_page" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/LinearLayoutAlignItems">
+
+                <TextView
+                    android:text="@string/description_custom_preferences_page"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:textSize="16sp"
+                    style="@style/SubtitleSimpleTextView" />
+
+                <TextView
+                    android:text="@string/title_preferences_list"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="18sp"
+                    style="@style/SubtitleBoldTextView" />
+
+                <TextView
+                    android:text="@string/description_two_custom_preferences_page"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:textSize="16sp"
+                    style="@style/SubtitleSimpleTextView" />
+
+                <TextView
+                    android:text="@string/description_three_custom_preferences_page"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:textSize="16sp"
+                    style="@style/SubtitleSimpleTextView" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtitle_more_important"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp"
+                    style="@style/SubtitleGreyTextView" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerCustomPreferences"
+                        android:nestedScrollingEnabled="false"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </androidx.core.widget.NestedScrollView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtitle_less_important"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="100dp"
+                    style="@style/SubtitleGreyTextView" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/nextButtonPreferences"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/next_mustard_rounded_button"
+        android:gravity="center|center_vertical"
+        android:textAllCaps="false"
+        android:textColor="@color/white_400"
+        android:textSize="50sp" />
+</RelativeLayout>
