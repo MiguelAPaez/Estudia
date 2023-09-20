@@ -72,12 +72,31 @@
     <string name="study_question_1">¿Cuál es tu nivel de estudios?</string>
     <string name="motivation_question_1">¿Cuál es tu motivación para estudiar?</string>
     <string name="motivation_placeholder">Ingresa una palabra</string>
+    <string name="program_type_question">¿Qué tipo de programa del Sena deseas estudiar?</string>
+    <string name="program_modality_question">¿Cuál es la modalidad de estudio que prefieres?</string>
+    <string name="study_area_question">¿Cuál es tú área de estudio preferida?</string>
+    <string name="city_question">¿En cuál ciudad deseas realizar tus estudios?</string>
+    <string name="mobility_question">¿Tienes posibilidades de desplazarte a otra ciudad para estudiar?</string>
+    <string name="time_availability_question">¿Cuál es tu disponibilidad horaria?</string>
     <string name="title_activity_customer_fragments">CustomerFragments</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="title_activity_customer_register_container">CustomerRegisterContainer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Customer Preferences Screen-->
+    <string name="title_custom_preferences_page">Preferencias de estudio</string>
+    <string name="description_custom_preferences_page">En esta pantalla encontrarás las
+        preferencias de estudio que puedes tener en cuenta cuando empieces a estudiar.</string>
+    <string name="description_two_custom_preferences_page"><b>¡Ordena la lista!</b> Para ello arrastra y suelta
+        los <i>items</i> de la lista acorde al orden que le darías de lo más importante a lo menos importante
+        que tendrías en cuenta.</string>
+    <string name="description_three_custom_preferences_page">Cuando finalices de organizarlos da click en
+        el botón "siguiente" de la parte inferior.</string>
+    <string name="title_preferences_list">Listado de preferencias</string>
+    <string name="subtitle_more_important">Más importante</string>
+    <string name="subtitle_less_important">Menos importante</string>
 
     <!--Intro Personality Survey Screen-->
     <string name="title_text_survey_page">Test</string>

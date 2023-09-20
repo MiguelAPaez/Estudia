@@ -90,7 +90,7 @@ public class CustomerRegisterContainer extends AppCompatActivity implements OnFr
         } else if (fragment instanceof NineCustomerRegisterFragment) {
             saveAnswer(8, data.getString("answer"));
             saveInMemory();
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            Intent i = new Intent(getApplicationContext(), CustomerPreferencesActivity.class);
             startActivity(i);
             finish();
         }
@@ -99,7 +99,7 @@ public class CustomerRegisterContainer extends AppCompatActivity implements OnFr
             int newPosition = mSlideViewPager.getCurrentItem() + 1;
             mSlideViewPager.setCurrentItem(newPosition, false);
         } else {
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            Intent i = new Intent(getApplicationContext(), CustomerPreferencesActivity.class);
             startActivity(i);
             finish();
         }

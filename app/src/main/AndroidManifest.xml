@@ -17,6 +17,12 @@
             android:name=".activities.IntroPersonalities"
             android:exported="false" />
         <activity
+            android:name=".activities.SelectPreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CustomerPreferencesActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.CustomerRegisterContainer"
             android:exported="false"
             android:label="@string/title_activity_customer_register_container"
