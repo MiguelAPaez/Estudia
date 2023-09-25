@@ -11,9 +11,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.estudia.R;
 import com.example.estudia.facades.CognitoImplementation;
+import com.example.estudia.facades.DynamoPersistenceImplementation;
 import com.example.estudia.services.PreferencesEstudiaService;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextView eWelcomeMessage;
     CognitoImplementation cognitoImplementation;
     PreferencesEstudiaService preferencesEstudiaService;
+    DynamoPersistenceImplementation dynamoPersistenceImplementation;
     String name;
     boolean dataCharged = false;
 
@@ -41,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         cognitoImplementation = new CognitoImplementation(getApplicationContext());
 
         preferencesEstudiaService = new PreferencesEstudiaService(getApplicationContext());
+
+        dynamoPersistenceImplementation = new DynamoPersistenceImplementation(getApplicationContext());
 
         MainActivity.ThreadC c = new ThreadC();
         c.start();
@@ -76,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnSurvey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dynamoPersistenceImplementation.getUsers();
                 Intent intent = new Intent(getApplicationContext(), IntroSurvey.class);
                 startActivity(intent);
             }
@@ -84,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dynamoPersistenceImplementation.saveUserInfo();
                 Intent intent = new Intent(getApplicationContext(), SelectPreferencesActivity.class);
                 startActivity(intent);
             }
