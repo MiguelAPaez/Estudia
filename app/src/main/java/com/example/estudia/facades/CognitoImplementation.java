@@ -47,7 +47,7 @@ public class CognitoImplementation {
         Amplify.Auth.signUp(userProfile.getEmail(), userProfile.getPassword(), AuthSignUpOptions.builder().userAttributes(attributes).build(),
                 result -> {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
-//                    this.toastEstudiaService.showToast("Se han registrado los datos básicos del usuario");
+                    this.toastEstudiaService.showToast("Se han registrado los datos básicos del usuario");
                     Intent intent = new Intent(context, Confirm.class);
                     intent.putExtra("profile", userProfile);
                     intent.putExtra("basicProfile", basicUserProfile);
@@ -55,7 +55,7 @@ public class CognitoImplementation {
                 },
                 error -> {
                     Log.e("AuthQuickStart", "Sign up failed", error);
-//                    this.toastEstudiaService.showToast("Falla en el servicio de registro. Intenta nuevamente");
+                    this.toastEstudiaService.showToast("Falla en el servicio de registro. Intenta nuevamente");
                 }
         );
     }
@@ -66,6 +66,7 @@ public class CognitoImplementation {
                     Log.i("AuthQuickstart", result.isSignedIn() ? "Sign in succeeded" : "Sign in not complete");
                     if(result.isSignedIn()) {
                         userAttributes();
+//                        this.toastEstudiaService.showToast("Inicio de Sesión Exitoso");
                         Intent intent = new Intent(context, WelcomeIntroSlides.class);
                         sendToActivity(intent);
                     }
@@ -78,6 +79,7 @@ public class CognitoImplementation {
             if (signOutResult instanceof AWSCognitoAuthSignOutResult.CompleteSignOut) {
                 // Sign Out completed fully and without errors.
                 Log.i("AuthQuickStart", "Signed out successfully");
+//                this.toastEstudiaService.showToast("Se ha cerrado sesión correctamente");
                 Intent intent = new Intent(context, Login.class);
                 sendToActivity(intent);
             } else if (signOutResult instanceof AWSCognitoAuthSignOutResult.PartialSignOut) {
@@ -118,15 +120,15 @@ public class CognitoImplementation {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete");
                     if (result.isSignUpComplete()) {
-//                        this.toastEstudiaService.showToast("Se ha confirmado tu cuenta");
+                        this.toastEstudiaService.showToast("Se ha confirmado tu cuenta");
                         signIn(userProfile.getEmail(), userProfile.getPassword());
                     } else {
-//                        this.toastEstudiaService.showToast("Ingrese un código de confirmación válido");
+                        this.toastEstudiaService.showToast("Ingrese un código de confirmación válido");
                     }
                 },
                 error -> {
                     Log.e("AuthQuickstart", error.toString());
-//                    this.toastEstudiaService.showToast("Falla en el servicio de confirmación. Intenta nuevamente");
+                    this.toastEstudiaService.showToast("Falla en el servicio de confirmación. Intenta nuevamente");
                 }
         );
     }

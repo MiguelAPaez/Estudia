@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnSurvey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dynamoPersistenceImplementation.getUsers();
+                dynamoPersistenceImplementation.getUser();
                 Intent intent = new Intent(getApplicationContext(), IntroSurvey.class);
                 startActivity(intent);
             }
@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             synchronized (this) {
+                getUserData();
                 dataCharged = fillData();
                 notify();
             }
@@ -118,5 +119,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean fillData() {
         name = preferencesEstudiaService.getAttribute(NAME_USER);
         return true;
+    }
+
+    public void getUserData() {
+        this.dynamoPersistenceImplementation.getUser();
     }
 }

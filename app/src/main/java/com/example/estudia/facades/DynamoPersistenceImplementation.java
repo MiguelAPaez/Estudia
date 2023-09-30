@@ -43,10 +43,32 @@ public class DynamoPersistenceImplementation {
                     @Override
                     public void onResponse(JSONObject response) {
                         System.out.println(response);
+                        showToast("Se consultaron exitosamente los datos de los usuarios");
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        mQueue.add(request);
+    }
+
+    public void getUser() {
+        String userEmail = this.preferencesEstudiaService.getAttribute(EMAIL_USER);
+        System.out.println("USER EMAIL!!! " + userEmail);
+        String endpoint = URL + "/user/" + userEmail;
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, endpoint, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        showToast("Se consultaron exitosamente los datos del usuario");
+                        System.out.println(response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("Entré al error interno");
                 error.printStackTrace();
             }
         });
@@ -62,6 +84,7 @@ public class DynamoPersistenceImplementation {
                         @Override
                         public void onResponse(JSONObject response) {
                             System.out.println(response);
+                            showToast("Se han registrado los datos del usuario");
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -94,6 +117,10 @@ public class DynamoPersistenceImplementation {
         }
 
         return json;
+    }
+
+    private void showToast(String message) {
+        this.toastEstudiaService.showToast(message);
     }
 
 }
