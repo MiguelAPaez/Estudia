@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +25,8 @@ public class IntroPersonalities extends AppCompatActivity {
     PersonalityEnum[] personalities = PersonalityEnum.values();
     CardView personalityOneCardView, personalityTwoCardView, personalityThreeCardView;
     TextView textPersonalityOne, textPersonalityTwo, textPersonalityThree;
-    ImageView imagePersonalityOne, imagePersonalityTwo, imagePersonalityThree;
+    ImageView imagePersonalityOne, imagePersonalityTwo, imagePersonalityThree, backButton;
+    Button programsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,11 @@ public class IntroPersonalities extends AppCompatActivity {
         imagePersonalityTwo = (ImageView) findViewById(R.id.imagePersonalityTwo);
         textPersonalityThree = (TextView) findViewById(R.id.titlePersonalityThree);
         imagePersonalityThree = (ImageView) findViewById(R.id.imagePersonalityThree);
+        backButton = (ImageView) findViewById(R.id.backButtonPersonalities);
         personalityOneCardView = (CardView) findViewById(R.id.personalityOne);
         personalityTwoCardView = (CardView) findViewById(R.id.personalityTwo);
         personalityThreeCardView = (CardView) findViewById(R.id.personalityThree);
+        programsButton = (Button) findViewById(R.id.programsButton);
 
         this.preferencesEstudiaService = new PreferencesEstudiaService(this);
         String personalityOne = this.preferencesEstudiaService.getAttribute(PERSONALITY_1);
@@ -88,6 +92,21 @@ public class IntroPersonalities extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Personality.class);
                 intent.putExtra("personality", personalityThree);
+                startActivity(intent);
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+        programsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StudyPrograms.class);
                 startActivity(intent);
             }
         });

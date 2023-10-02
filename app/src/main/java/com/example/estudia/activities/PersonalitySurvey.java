@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import com.example.estudia.R;
 import com.example.estudia.adapters.PersonalitySurveyViewPagerAdapter;
 import com.example.estudia.enums.SurveyPersonalityQuestionsEnum;
+import com.example.estudia.facades.DynamoPersistenceImplementation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,11 +23,14 @@ public class PersonalitySurvey extends AppCompatActivity {
     ViewPager mSlideViewPager;
     int lengthQuestions = SurveyPersonalityQuestionsEnum.values().length;
     private List<String> personalities = new ArrayList<>();
+    DynamoPersistenceImplementation dynamoPersistenceImplementation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personality_survey);
+
+        dynamoPersistenceImplementation = new DynamoPersistenceImplementation(getApplicationContext());
 
         progressBar = (ProgressBar) findViewById(R.id.progressBarSurvey);
         progressBar.setMax(60);
@@ -45,6 +49,7 @@ public class PersonalitySurvey extends AppCompatActivity {
                     mSlideViewPager.setCurrentItem(newPosition, false);
                     progressBar.setProgress(newPosition);
                 } else {
+                    dynamoPersistenceImplementation.saveUserInfo();
                     Intent i = new Intent(getApplicationContext(), IntroPersonalities.class);
                     startActivity(i);
                     finish();

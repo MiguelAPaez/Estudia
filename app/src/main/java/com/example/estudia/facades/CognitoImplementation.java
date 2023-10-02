@@ -47,7 +47,7 @@ public class CognitoImplementation {
         Amplify.Auth.signUp(userProfile.getEmail(), userProfile.getPassword(), AuthSignUpOptions.builder().userAttributes(attributes).build(),
                 result -> {
                     Log.i("AuthQuickStart", "Result: " + result.toString());
-                    this.toastEstudiaService.showToast("Se han registrado los datos básicos del usuario");
+//                    this.toastEstudiaService.showToast("Se han registrado los datos básicos del usuario");
                     Intent intent = new Intent(context, Confirm.class);
                     intent.putExtra("profile", userProfile);
                     intent.putExtra("basicProfile", basicUserProfile);
@@ -55,7 +55,7 @@ public class CognitoImplementation {
                 },
                 error -> {
                     Log.e("AuthQuickStart", "Sign up failed", error);
-                    this.toastEstudiaService.showToast("Falla en el servicio de registro. Intenta nuevamente");
+//                    this.toastEstudiaService.showToast("Falla en el servicio de registro. Intenta nuevamente");
                 }
         );
     }
@@ -120,15 +120,15 @@ public class CognitoImplementation {
                 result -> {
                     Log.i("AuthQuickstart", result.isSignUpComplete() ? "Confirm signUp succeeded" : "Confirm sign up not complete");
                     if (result.isSignUpComplete()) {
-                        this.toastEstudiaService.showToast("Se ha confirmado tu cuenta");
+//                        this.toastEstudiaService.showToast("Se ha confirmado tu cuenta");
                         signIn(userProfile.getEmail(), userProfile.getPassword());
                     } else {
-                        this.toastEstudiaService.showToast("Ingrese un código de confirmación válido");
+//                        this.toastEstudiaService.showToast("Ingrese un código de confirmación válido");
                     }
                 },
                 error -> {
                     Log.e("AuthQuickstart", error.toString());
-                    this.toastEstudiaService.showToast("Falla en el servicio de confirmación. Intenta nuevamente");
+//                    this.toastEstudiaService.showToast("Falla en el servicio de confirmación. Intenta nuevamente");
                 }
         );
     }
@@ -141,7 +141,9 @@ public class CognitoImplementation {
                     for (int i = 0; i <= elements.length; i++) {
                         AuthUserAttribute dataElement = (AuthUserAttribute) elements[i];
                         AuthUserAttributeKey key = (AuthUserAttributeKey) dataElement.getKey();
-                        this.preferencesEstudiaService.writeAttribute(key.getKeyString(), dataElement.getValue());
+                        if (dataElement.getValue() != null) {
+                            this.preferencesEstudiaService.writeAttribute(key.getKeyString(), dataElement.getValue());
+                        }
                     }
                 },
                 error -> Log.e("AuthDemo", "Failed to fetch user attributes.", error)

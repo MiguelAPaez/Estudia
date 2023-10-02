@@ -3,6 +3,7 @@ package com.example.estudia.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,8 +24,7 @@ public class StudyProgramActivity extends AppCompatActivity {
         setContentView(R.layout.activity_study_program);
 
         String nameString = getIntent().getStringExtra("name");
-        // int imageInt = Integer.parseInt(Objects.requireNonNull(getIntent().getStringExtra("image")));
-        int imageInt = R.drawable.student;
+        int imageInt = getIntent().getIntExtra("image", 0);
         String codeString = getIntent().getStringExtra("code");
         String scheduleString = getIntent().getStringExtra("schedule");
         String cityString = getIntent().getStringExtra("city");
@@ -51,5 +51,12 @@ public class StudyProgramActivity extends AppCompatActivity {
         programType.setText(programTypeString);
         description.setText(descriptionString);
         image.setImageResource(imageInt);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }

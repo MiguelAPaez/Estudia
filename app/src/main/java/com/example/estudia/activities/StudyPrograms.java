@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.estudia.R;
@@ -38,6 +41,7 @@ public class StudyPrograms extends AppCompatActivity implements RecyclerViewEstu
     RecyclerView recyclerHorizontalProgramsPersonality3;
     PreferencesEstudiaService preferencesEstudiaService;
     TextView personalityTV1, personalityTV2, personalityTV3;
+    ImageView backButton;
     String personality1;
     String personality2;
     String personality3;
@@ -69,8 +73,7 @@ public class StudyPrograms extends AppCompatActivity implements RecyclerViewEstu
         personalityTV2.setText(personality2);
         personalityTV3.setText(personality3);
 
-        System.out.println("PROGRAMAS STUDY!!");
-        System.out.println(stringPrograms);
+        backButton = (ImageView) findViewById(R.id.backButtonPrograms);
 
         programsListPersonality1 = new ArrayList<>();
         programsListPersonality2 = new ArrayList<>();
@@ -91,7 +94,12 @@ public class StudyPrograms extends AppCompatActivity implements RecyclerViewEstu
         recyclerHorizontalProgramsPersonality3 = (RecyclerView) findViewById(R.id.recyclerHorizontalSuggestedProgramsPersonality3);
         recyclerHorizontalProgramsPersonality3.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        // fillPrograms();
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         ProgramsHorizontalAdapter horizontalAdapter = new ProgramsHorizontalAdapter(programsListPersonality1, this, this, 1);
         recyclerHorizontalProgramsPersonality1.setAdapter(horizontalAdapter);
@@ -189,17 +197,4 @@ public class StudyPrograms extends AppCompatActivity implements RecyclerViewEstu
         intent.putExtra("description", program.getDescription());
         startActivity(intent);
     }
-
-    /*private void fillPrograms() {
-        programsListPersonality1.add(new StudyProgram("Programa 1 SIII ESE SOY YO Y ESTOY PROBANDO QUE TAN GRANDE ES ESTO!!!", "Soy el Programa Número 1", "Virtual", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city",  R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 2", "Holii", "Presencial", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 3", "Cómo estás?", "Combinada", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 4", "Pasaba a decirte", "Virtual", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 5", "Que vas bien", "Presencial", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 6", "Y que...", "Combinada", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 7", "Vas a terminar", "Virtual", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 8", "Tú tesis", "Presencial", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 9", "Att:", "Combinada", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-        programsListPersonality1.add(new StudyProgram("Programa 10", "Estudía!!!", "Virtual", new String[]{"335435"}, "requirements", "schedule", "study_center", "personality", "programType", "city", R.drawable.student));
-    }*/
 }

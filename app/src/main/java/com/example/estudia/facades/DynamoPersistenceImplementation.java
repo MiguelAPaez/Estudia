@@ -21,6 +21,8 @@ import com.example.estudia.services.ToastEstudiaService;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Iterator;
+
 public class DynamoPersistenceImplementation {
 
     Context context;
@@ -63,6 +65,19 @@ public class DynamoPersistenceImplementation {
                     @Override
                     public void onResponse(JSONObject response) {
                         showToast("Se consultaron exitosamente los datos del usuario");
+                        try {
+                            for (Iterator<String> it = response.keys(); it.hasNext(); ) {
+                                String currentKey = it.next();
+                                Object value = response.get(currentKey);
+                                if (currentKey.equals("body")) {
+                                    String body = response.getString("body");
+                                    JSONObject json = new JSONObject(body);
+                                    writeAttributes(json);
+                                }
+                            }
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
                         System.out.println(response);
                     }
                 }, new Response.ErrorListener() {
@@ -121,6 +136,20 @@ public class DynamoPersistenceImplementation {
 
     private void showToast(String message) {
         this.toastEstudiaService.showToast(message);
+    }
+
+    private void writeAttributes(JSONObject json) throws JSONException {
+        for (Iterator<String> it = json.keys(); it.hasNext(); ) {
+            String currentKey = it.next();
+            Object value = json.get(currentKey);
+            if (!currentKey.equals("createdAt")) {
+                System.out.println("CURRENT KEY!");
+                System.out.println(currentKey);
+                System.out.println("VALUE!!");
+                System.out.println(value);
+                this.preferencesEstudiaService.writeAttribute(currentKey, (String) value);
+            }
+        }
     }
 
 }

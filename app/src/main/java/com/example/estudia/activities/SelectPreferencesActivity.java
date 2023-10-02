@@ -2,6 +2,7 @@ package com.example.estudia.activities;
 
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_DESC_PREFERENCES;
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.ARRAY_PREFERENCES;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.REGISTER_FILLED;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.widget.Button;
 
 import com.example.estudia.R;
 import com.example.estudia.adapters.CustomPreferencesAdapter;
+import com.example.estudia.services.PreferencesEstudiaService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,11 +30,14 @@ public class SelectPreferencesActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Button btnNext;
     CustomPreferencesAdapter customPreferencesAdapter;
+    PreferencesEstudiaService preferencesEstudiaService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_preferences);
+
+        preferencesEstudiaService = new PreferencesEstudiaService(getApplicationContext());
 
         preferencesTitleList = new ArrayList<>(Arrays.asList(ARRAY_PREFERENCES));
         prferencesDescriptionList = new ArrayList<>(Arrays.asList(ARRAY_DESC_PREFERENCES));
@@ -51,6 +56,7 @@ public class SelectPreferencesActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                preferencesEstudiaService.writeAttribute(REGISTER_FILLED, "true");
                 Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
                 finish();

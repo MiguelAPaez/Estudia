@@ -1,6 +1,9 @@
 package com.example.estudia.activities;
 
 import static com.example.estudia.enums.CustomConstants.EstudiaConstants.NAME_USER;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITY_1;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.PERSONALITY_3;
+import static com.example.estudia.enums.CustomConstants.EstudiaConstants.REGISTER_FILLED;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -41,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
         btnPersonalities = (CardView) findViewById(R.id.personalitiesButton);
         btnPrograms = (CardView) findViewById(R.id.programsButton);
         eWelcomeMessage = (TextView) findViewById(R.id.welcomeMessageMain);
+
+        btnSurvey.setEnabled(false);
+        btnSurvey.setCardBackgroundColor(getResources().getColor(R.color.grey_200));
+        btnPersonalities.setEnabled(false);
+        btnPersonalities.setCardBackgroundColor(getResources().getColor(R.color.grey_200));
+        btnPrograms.setEnabled(false);
+        btnPrograms.setCardBackgroundColor(getResources().getColor(R.color.grey_200));
 
         //Cognito Service
         cognitoImplementation = new CognitoImplementation(getApplicationContext());
@@ -128,5 +138,26 @@ public class MainActivity extends AppCompatActivity {
     public void getUserData() {
         this.dynamoPersistenceImplementation.getUser();
         this.studyProgramsImplementation.getPrograms();
+        this.enableOptions();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.enableOptions();
+    }
+
+    public void enableOptions() {
+        if (this.preferencesEstudiaService.getAttribute(PERSONALITY_1) != null) {
+            btnPersonalities.setEnabled(true);
+            btnPersonalities.setCardBackgroundColor(getResources().getColor(R.color.white_500));
+            btnPrograms.setEnabled(true);
+            btnPrograms.setCardBackgroundColor(getResources().getColor(R.color.white_500));
+        }
+        if (this.preferencesEstudiaService.getAttribute(REGISTER_FILLED) != null && this.preferencesEstudiaService.getAttribute(REGISTER_FILLED).equals("true")) {
+            btnSurvey.setEnabled(true);
+            btnSurvey.setCardBackgroundColor(getResources().getColor(R.color.white_500));
+            System.out.println(this.preferencesEstudiaService.getAttribute(PERSONALITY_1));
+        }
     }
 }
