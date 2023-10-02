@@ -43,6 +43,7 @@ public class CustomConstants {
         public static final String SPINNER = "spinner";
         public static final String SWITCH = "switch";
         public static final String TEXT_EDIT = "text";
+        public static final String PROGRAMS = "programs";
         public static final int REALISTA = 0;
         public static final int INVESTIGADOR = 1;
         public static final int ARTISTA = 2;

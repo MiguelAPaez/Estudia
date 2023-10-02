@@ -9,43 +9,71 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120sp"
-        android:gravity="bottom"
+        android:layout_height="80dp"
+        android:orientation="vertical"
         android:background="@color/mustard_500">
 
-        <TextView
-            style="@style/TitlePageTextView"
-            android:textSize="35sp"
-            android:layout_marginBottom="12dp"
-            android:text="@string/study_programs_screen_title" />
+        <ImageView
+            android:id="@+id/backButtonPrograms"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/arrow_back" />
     </LinearLayout>
 
-    <TextView
-        style="@style/TitleSimpleTextView"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/study_programs_screen_second_title" />
+    <ScrollView
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/WightHeightBase">
 
-    <TextView
-        style="@style/SubtitleSimpleTextView"
-        android:text="@string/study_programs_first_subtitle" />
+        <LinearLayout style="@style/LinearLayoutBase">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerHorizontalSuggestedPrograms"
-        android:scrollbars="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <TextView
+                style="@style/TitleSimpleTextView"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/study_programs_screen_second_title" />
 
-    <TextView
-        style="@style/SubtitleSimpleTextView"
-        android:text="@string/study_programs_second_subtitle" />
+            <TextView
+                style="@style/SubtitleSimpleTextView"
+                android:text="@string/study_programs_first_subtitle" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerVerticalSuggestedPrograms"
-        android:scrollbars="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp" />
+            <TextView
+                style="@style/SubtitleSimpleTextView"
+                android:id="@+id/studyProgramsPersonality1"
+                android:text="Personalidad 1" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerHorizontalSuggestedProgramsPersonality1"
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/SubtitleSimpleTextView"
+                android:id="@+id/studyProgramsPersonality2"
+                android:text="Personalidad 2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerHorizontalSuggestedProgramsPersonality2"
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                style="@style/SubtitleSimpleTextView"
+                android:id="@+id/studyProgramsPersonality3"
+                android:text="Personalidad 3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerHorizontalSuggestedProgramsPersonality3"
+                android:scrollbars="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

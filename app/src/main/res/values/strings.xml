@@ -55,10 +55,10 @@
     <string name="subtitle_page_4">No seríamos nada sin nuestros peludos, ellos hacen parte de Estudia y de ti</string>
 
     <!--Main Page Screen-->
-    <string name="next_register_title">Continuar registro</string>
+    <string name="next_register_title">Queremos conocer más de ti</string>
     <string name="personality_survey_title">Test de Personalidad</string>
+    <string name="personality_title">Tus Personalidades</string>
     <string name="programs_title">Programas Educativos</string>
-    <string name="profile_tile">Perfil</string>
     <string name="logout_title">Salir</string>
 
     <!--    Customer Register Screen-->
@@ -208,5 +208,17 @@
     <string name="study_programs_screen_second_title">Programas Educativos</string>
     <string name="study_programs_first_subtitle">Programas más apropiados para ti</string>
     <string name="study_programs_second_subtitle">Otros programas para ti</string>
+
+    <!--Study Program Screen-->
+    <string name="study_program_title">Nombre Programa</string>
+    <string name="study_program_subtitle1">Datos del Programa</string>
+    <string name="study_program_row_title1">Dato</string>
+    <string name="study_program_row_title2">Descripción</string>
+    <string name="study_program_row_code">Código</string>
+    <string name="study_program_row_schedule">Horario</string>
+    <string name="study_program_row_city">Ciudad</string>
+    <string name="study_program_row_study_center">Centro de formación</string>
+    <string name="study_program_row_program_type">Tipo de Programa</string>
+    <string name="study_program_subtitle2">Descripción del Programa</string>
 
 </resources>

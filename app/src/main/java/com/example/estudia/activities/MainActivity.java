@@ -11,26 +11,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.estudia.R;
 import com.example.estudia.facades.CognitoImplementation;
 import com.example.estudia.facades.DynamoPersistenceImplementation;
+import com.example.estudia.facades.StudyProgramsImplementation;
 import com.example.estudia.services.PreferencesEstudiaService;
-
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView btnLogout, btnRegister, btnSurvey, btnProfile;
+    CardView btnLogout, btnRegister, btnSurvey, btnPersonalities, btnPrograms;
     TextView eWelcomeMessage;
     CognitoImplementation cognitoImplementation;
     PreferencesEstudiaService preferencesEstudiaService;
     DynamoPersistenceImplementation dynamoPersistenceImplementation;
+    StudyProgramsImplementation studyProgramsImplementation;
     String name;
     boolean dataCharged = false;
 
@@ -44,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogout = (CardView) findViewById(R.id.buttonLogOut);
         btnRegister = (CardView) findViewById(R.id.nextRegister);
         btnSurvey = (CardView) findViewById(R.id.personalitySurveyButton);
-        btnProfile = (CardView) findViewById(R.id.profileButton);
+        btnPersonalities = (CardView) findViewById(R.id.personalitiesButton);
+        btnPrograms = (CardView) findViewById(R.id.programsButton);
         eWelcomeMessage = (TextView) findViewById(R.id.welcomeMessageMain);
 
         //Cognito Service
@@ -53,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         preferencesEstudiaService = new PreferencesEstudiaService(getApplicationContext());
 
         dynamoPersistenceImplementation = new DynamoPersistenceImplementation(getApplicationContext());
+
+        studyProgramsImplementation = new StudyProgramsImplementation(getApplicationContext());
 
         MainActivity.ThreadC c = new ThreadC();
         c.start();
@@ -88,17 +85,24 @@ public class MainActivity extends AppCompatActivity {
         btnSurvey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dynamoPersistenceImplementation.getUser();
                 Intent intent = new Intent(getApplicationContext(), IntroSurvey.class);
                 startActivity(intent);
             }
         });
 
-        btnProfile.setOnClickListener(new View.OnClickListener() {
+        btnPersonalities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dynamoPersistenceImplementation.saveUserInfo();
-                Intent intent = new Intent(getApplicationContext(), SelectPreferencesActivity.class);
+                Intent intent = new Intent(getApplicationContext(), IntroPersonalities.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPrograms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StudyPrograms.class);
                 startActivity(intent);
             }
         });
@@ -123,5 +127,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void getUserData() {
         this.dynamoPersistenceImplementation.getUser();
+        this.studyProgramsImplementation.getPrograms();
     }
 }

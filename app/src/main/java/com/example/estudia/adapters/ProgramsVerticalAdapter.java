@@ -36,8 +36,8 @@ public class ProgramsVerticalAdapter extends RecyclerView.Adapter<ProgramsVertic
     @Override
     public void onBindViewHolder(@NonNull ViewVerticalHolderPrograms holder, int position) {
         holder.programName.setText(programsList.get(position).getName());
-        holder.programModality.setText(programsList.get(position).getModality());
-        holder.programCode.setText(programsList.get(position).getCode());
+        holder.programModality.setText(programsList.get(position).getProgramType());
+        holder.programCode.setText(programsList.get(position).getId());
         holder.image.setImageResource(programsList.get(position).getImage());
     }
 

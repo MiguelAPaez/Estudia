@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.StudyProgramActivity">
+
+    <LinearLayout
+        tools:ignore="MissingConstraints"
+        style="@style/LinearLayoutBase">
+
+        <ScrollView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/WightHeightBase">
+
+            <LinearLayout style="@style/LinearLayoutBase">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@color/mustard_500">
+
+                    <ImageView
+                        android:id="@+id/backButtonStudyProgram"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/arrow_back" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TitlePageTextView"
+                    android:id="@+id/nameProgram"
+                    android:layout_marginTop="20dp"
+                    android:textSize="25sp"
+                    android:textColor="@color/grey_coal_500"
+                    android:text="@string/study_program_title" />
+
+                <ImageView
+                    android:id="@+id/imageProgram"
+                    android:layout_width="155dp"
+                    android:layout_height="155dp"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center"
+                    app:srcCompat="@drawable/logo"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    style="@style/SubtitleSimpleTextView"
+                    android:text="@string/study_program_subtitle1" />
+
+                <LinearLayout style="@style/LinearLayoutAlignItems">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:stretchColumns="1"
+                        android:background="@color/white_500">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/mustard_500">
+
+                            <TextView
+                                android:id="@+id/tableTitle1"
+                                android:text="@string/study_program_row_title1"
+                                style="@style/StudyProgramRowTableStyle" />
+
+                            <TextView
+                                android:id="@+id/tableTitle2"
+                                android:text="@string/study_program_row_title2"
+                                style="@style/StudyProgramRowTableStyle" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tableCode"
+                                android:text="@string/study_program_row_code"
+                                style="@style/StudyProgramRowTableStyle" />
+
+                            <TextView
+                                android:id="@+id/tableCodeValue"
+                                android:text="@string/study_program_row_title2"
+                                style="@style/StudyProgramRowTableStyle" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tableSchedule"
+                                android:text="@string/study_program_row_schedule"
+                                style="@style/StudyProgramRowTableStyle" />
+
+                            <TextView
+                                android:id="@+id/tableScheduleValue"
+                                android:text="@string/study_program_row_title2"
+                                style="@style/StudyProgramRowTableStyle" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tableCity"
+                                android:text="@string/study_program_row_city"
+                                style="@style/StudyProgramRowTableStyle" />
+
+                            <TextView
+                                android:id="@+id/tableCityValue"
+                                android:text="@string/study_program_row_title2"
+                                style="@style/StudyProgramRowTableStyle" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tableStudyCenter"
+                                android:text="@string/study_program_row_study_center"
+                                style="@style/StudyProgramRowTableStyle" />
+
+                            <TextView
+                                android:id="@+id/tableStudyCenterValue"
+                                android:text="@string/study_program_row_title2"
+                                style="@style/StudyProgramRowTableStyle" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tableProgramType"
+                                android:text="@string/study_program_row_program_type"
+                                style="@style/StudyProgramRowTableStyle" />
+
+                            <TextView
+                                android:id="@+id/tableProgramTypeValue"
+                                android:text="@string/study_program_row_title2"
+                                style="@style/StudyProgramRowTableStyle" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/SubtitleSimpleTextView"
+                    android:text="@string/study_program_subtitle2" />
+
+                <TextView
+                    android:id="@+id/studyProgramDescription"
+                    style="@style/SubtitleBlackTextViewLayoutForm"
+                    android:textAlignment="textStart"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Descripción..." />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

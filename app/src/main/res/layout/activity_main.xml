@@ -39,6 +39,7 @@
 
                         <TextView
                             android:text="@string/next_register_title"
+                            android:layout_width="130dp"
                             style="@style/TitleTextCardViewMain" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -64,10 +65,32 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/programsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/personalitiesButton"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="12dp"
                     android:layout_row="3"
+                    android:layout_column="0"
+                    style="@style/CardViewMain">
+
+                    <LinearLayout style="@style/LinearLayoutHorizontalMatchParent">
+
+                        <ImageView
+                            android:src="@drawable/brain"
+                            style="@style/ImageCardViewMain" />
+
+                        <TextView
+                            android:text="@string/personality_title"
+                            style="@style/TitleTextCardViewMain" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/programsButton"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="12dp"
+                    android:layout_row="4"
                     android:layout_column="0"
                     style="@style/CardViewMain">
 
@@ -79,28 +102,6 @@
 
                         <TextView
                             android:text="@string/programs_title"
-                            style="@style/TitleTextCardViewMain" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/profileButton"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="12dp"
-                    android:layout_row="4"
-                    android:layout_column="0"
-                    style="@style/CardViewMain">
-
-                    <LinearLayout style="@style/LinearLayoutHorizontalMatchParent">
-
-                        <ImageView
-                            android:src="@drawable/user_1"
-                            style="@style/ImageCardViewMain" />
-
-                        <TextView
-                            android:text="@string/profile_tile"
                             style="@style/TitleTextCardViewMain" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
