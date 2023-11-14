@@ -46,7 +46,6 @@ public class WelcomeIntroSlidesViewPagerAdapter extends PagerAdapter {
         slideTitleImage.setImageResource(customRegisterObj.getImageResId());
         slideHeading.setText(customRegisterObj.getTitleResId());
         slideDescription.setText(customRegisterObj.getDescriptionResId());
-        ;
 
         container.addView(view);
         return view;

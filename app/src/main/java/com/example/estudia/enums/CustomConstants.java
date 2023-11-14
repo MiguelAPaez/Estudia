@@ -40,6 +40,8 @@ public class CustomConstants {
         public static final String[] ARRAY_CITIES = {"Selecciona tu ciudad preferida", "Bogotá", "Cali", "Fusagasugá", "Medellín"};
         public static final String[] ARRAY_TIME_AVAILABILITY = {"Selecciona tu disponibilidad horaria", "Jornada Diurna (6:00 a.m., a 6:00 p.m.)", "Jornada Nocturna (6:00 p.m., a 10:00 p.m.)",
                 "Jornada Madrugada (10:00 p.m., a 6:00 a.m.)", "Jornada Mixta (6:00 a.m., a 10:00 p.m.)"};
+
+        public static final String[] ARRAY_TITLES_PERSONALITY_SURVEY = {"¡Vamos, Inicia!", "¡Sigue así!", "¡Vamos por más!", "¡Llevas más de 30!", "¡Un poco más!", "¡¡Ya falta poco!!"};
         public static final String SPINNER = "spinner";
         public static final String SWITCH = "switch";
         public static final String TEXT_EDIT = "text";

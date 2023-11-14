@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.estudia.R;
 import com.example.estudia.adapters.WelcomeIntroSlidesViewPagerAdapter;
+import com.example.estudia.enums.WelcomeSlidesEnum;
 
 public class WelcomeIntroSlides extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class WelcomeIntroSlides extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(getItem(0) < 3) {
+                if (getItem(0) < 2) {
                     mSlideViewPager.setCurrentItem(getItem(1), true);
                 } else {
                     Intent i = new Intent(getApplicationContext(), MainActivity.class);
@@ -63,7 +64,7 @@ public class WelcomeIntroSlides extends AppCompatActivity {
     }
 
     public void setUpIndicator(int position) {
-        dots = new TextView[4];
+        dots = new TextView[WelcomeSlidesEnum.values().length];
         mDotLayout.removeAllViews();
 
         for(int i = 0; i<dots.length; i++) {
